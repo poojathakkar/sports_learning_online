@@ -12,7 +12,7 @@ import './App.css';
 class App extends Component {
   render() {
 return (
-  <Router basename="/react-auth-ui/">
+  <Router>
     <div className="App">
       <div className="App__Aside"> 
         <img src="https://trello-attachments.s3.amazonaws.com/5f3d54fdc25471825210d34b/5f3d814594959d53f84e4b59/238e3e444b2edffeb4e52a6f4b0bf2e7/SPORTS_LEARNING_LOGO.png"/>

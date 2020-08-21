@@ -4,9 +4,10 @@ class Register extends Component {
     constructor() {
         super();
         this.state = {
+            first_name: '',
+            last_name: '',
             email: '',
             password: '',
-            name: '',
             hasAgreed: false
         };
         this.handleChange = this.handleChange.bind(this);
@@ -30,16 +31,20 @@ class Register extends Component {
         <div className="FormCenter">
             <form onSubmit={this.handleSubmit} className="FormFields">
               <div className="FormField">
-                <label className="FormField__Label" htmlFor="name">Full Name</label>
-                <input type="text" id="name" className="FormField__Input" placeholder="Enter your full name" name="name" value={this.state.name} onChange={this.handleChange} />
+                <label className="FormField__Label" htmlFor="first_name">First Name</label>
+                <input type="text" id="first_name" className="FormField__Input" placeholder="Enter your first name" name="first_name" value={this.state.first_name} onChange={this.handleChange} />
               </div>
               <div className="FormField">
-                <label className="FormField__Label" htmlFor="password">Password</label>
-                <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
+                <label className="FormField__Label" htmlFor="last_name">Last Name</label>
+                <input type="text" id="last_name" className="FormField__Input" placeholder="Enter your last name" name="last_name" value={this.state.last_name} onChange={this.handleChange} />
               </div>
               <div className="FormField">
                 <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
                 <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
+              </div>
+              <div className="FormField">
+                <label className="FormField__Label" htmlFor="password">Password</label>
+                <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={this.state.password} onChange={this.handleChange} />
               </div>
               <div className="FormField">
                 <label className="FormField__CheckboxLabel">
