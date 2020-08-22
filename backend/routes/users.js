@@ -15,36 +15,15 @@ module.exports = (db) => {
 
   });
 
-  // ASYNC AWAIT INSTEAD OF .THEN
-  // router.get('/', async (req, res) => {
-    
-  //   const query = {
-  //     text: 'SELECT * FROM users;'
-  //   };
-
-  //   try {
-  //     const users = await db.query(query);
-  //     res.json(users);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-
-
-  // });
-
-
   router.post('/', (req, res) => {
-
+    console.log("req.body:", req.body);
     // extract the data from req.body
-    const {name, email, password} = req.body;
-
-    console.log({name}, {email},{password});
+    const {first_name, last_name, email, password, role} = req.body;
 
     // create an insert query in the db
-
     const query = {
-      text: `INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *;`,
-      values: [name, email, password]
+      text: `INSERT INTO users (first_name, last_name, email, password, role) VALUES ($1, $2, $3, $4, $5) RETURNING *;`,
+      values: [first_name, last_name, email, password, role]
     };
 
     db

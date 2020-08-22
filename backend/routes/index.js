@@ -1,4 +1,6 @@
 const express = require('express');
+const { database } = require('pg/lib/defaults');
+// const express = require('express');
 const router = express.Router();
 
 module.exports = db => {
@@ -12,5 +14,3 @@ module.exports = db => {
   return router;
 
 };
-
-
