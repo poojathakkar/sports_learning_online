@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import  SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; 
-//import { Dropdown } from 'semantic-ui-react';
+import { useStateValue } from './StateProvider';
+
+
 function Header() {
+  const [{ basket }] = useStateValue();
+
+  console.log("Inside basket", basket);
+
   return (
     <nav className='header'>
     <Link to='/'>
@@ -49,21 +55,11 @@ function Header() {
       <Link to='/checkout' className='header__link'>
         <div className='header__optionBasket'>
           <ShoppingCartIcon />
-          <span className='header__optionSecond header__basketCount'>0</span>
+  <span className='header__optionSecond header__basketCount'>{basket?.length}</span>
         </div>
       </Link>
     </div>
-
-   
-  
-      
-   
-      
-  
-
-      
-
-      
+ 
     </nav>
   )
 }
