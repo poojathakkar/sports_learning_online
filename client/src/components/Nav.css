@@ -1,0 +1,40 @@
+.nav {
+  background-color: #66DAC7;
+  height: var(--navbar-height);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 5px #00000010;
+  z-index: 999999;
+}
+
+.nav img {
+  max-height: 66px;
+  max-width: 190px;
+  height: auto;
+  width: auto;
+  margin: 25px;
+}
+
+
+.nav__button {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+.nav__Button {
+  background-color: #4C5D72;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 35px;
+  padding: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: .8em;
+  font-weight: 500;
+  width: 90px;
+}
