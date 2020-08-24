@@ -1,5 +1,11 @@
 .FormCenter {
+  margin-top:20px;
   margin-bottom: 100px;
+  margin-left: 20px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  
 }
 .FormField {
   margin-bottom: 40px;
@@ -34,4 +40,11 @@
   padding: 15px 70px;
   font-size: .8em;
   font-weight: 500;
+}
+.FormField__Link {
+  color: #445366;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 1.5px solid #225E62;
+  padding-bottom: 5px;
 }

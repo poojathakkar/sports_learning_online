@@ -1,7 +1,7 @@
 import React from 'react';
 import './Course.css';
 //import { use } from '../../../backend/app';
-import { useStateValue } from '../components/StateProvider';
+import { useStateValue } from './StateProvider';
 
 function Course({id, title, description, price, thumbnail, content, user_id}) {
 

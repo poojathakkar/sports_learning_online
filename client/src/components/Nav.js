@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './Nav.css';
-// import { AuthContext } from './AuthProvider';
+//import { AuthContext } from './AuthProvider';
 
 function Nav() {
+  //const { user, setUser } = useContext(AuthContext)
   return (
    <>
     <div className='nav'>
@@ -24,7 +25,7 @@ function Nav() {
           <button className="nav__Button mr-20" >Register</button>
         </Link> 
         </>
-          // )
+           //)
         }
       </div>
 
