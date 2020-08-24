@@ -19,6 +19,12 @@ const Register = () => {
     role: 'student',
   })
 
+  const [error, setError] = useState({
+    first_nameError: '',
+    emailError: '',
+    passwordError: '',
+  })
+
 
   useEffect(() => {
     if (!alert) {
@@ -52,8 +58,10 @@ const Register = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     console.log('The form was submitted with the following data:');
     console.log(`state: ${JSON.stringify(state)}`);
+    
 
     axios.post(`/api/register`, {first_name: state.first_name, last_name: state.last_name, email: state.email, password: state.password, role: state.role})
       .then(res => {
@@ -73,6 +81,7 @@ const Register = () => {
         setAlert('User already exists!');
 
       })
+  
   }
 
   return (
@@ -86,7 +95,7 @@ const Register = () => {
       <form onSubmit={handleSubmit} className='FormFields'>
         <div className='FormField'>
           <label className='FormField__Label' htmlFor='first_name'>First Name</label>
-          <input type='text' id='first_name' className='FormField__Input' placeholder='Enter your first name' name='first_name' value={state.first_name} onChange={handleChange('first_name')} />
+          <input type='text' id='first_name' className='FormField__Input' placeholder='Enter your first name' name='first_name' value={state.first_name} onChange={handleChange('first_name')} required/>
         </div>
         <div className='FormField'>
           <label className='FormField__Label' htmlFor='last_name'>Last Name</label>
@@ -94,11 +103,11 @@ const Register = () => {
         </div>
         <div className='FormField'>
           <label className='FormField__Label' htmlFor='email'>E-Mail Address</label>
-          <input type='email' id='email' className='FormField__Input' placeholder='Enter your email' name='email' value={state.email} onChange={handleChange('email')} />
+          <input type='email' id='email' className='FormField__Input' placeholder='Enter your email' name='email' value={state.email} onChange={handleChange('email')} required/>
         </div>
         <div className='FormField'>
           <label className='FormField__Label' htmlFor='password'>Password</label>
-          <input type='password' id='password' className='FormField__Input' placeholder='Enter your password' name='password' value={state.password} onChange={handleChange('password')} />
+          <input type='password' id='password' className='FormField__Input' placeholder='Enter your password' name='password' value={state.password} onChange={handleChange('password')} required/>
         </div>
         <div className='FormField'>
           <label className='FormField__CheckboxLabel'>
