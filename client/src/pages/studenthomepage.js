@@ -1,6 +1,6 @@
 import React from 'react'
 import './studenthomepage.css';
-import Course from './Course';
+import Course from '../components/Course';
 
 function Studenthomepage() {
   return (

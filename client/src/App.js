@@ -8,6 +8,7 @@ import './App.css';
 import Nav from './components/Nav';
 import Studenthomepage from './pages/studenthomepage';
 import AuthProvider from './components/AuthProvider';
+import Checkout from './components/Checkout';
 
 
 // const {state, setState}  = useApplicationData();
@@ -38,6 +39,7 @@ function App() {
 
             <Route path='/checkout' >
               <Header />
+              <Checkout />
             </Route>
 
             <Route path='/profile/edit' >
