@@ -19,13 +19,6 @@ const Register = () => {
     role: 'student',
   })
 
-  const [error, setError] = useState({
-    first_nameError: '',
-    emailError: '',
-    passwordError: '',
-  })
-
-
   useEffect(() => {
     if (!alert) {
       return;

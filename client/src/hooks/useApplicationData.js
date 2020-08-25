@@ -1,24 +1,38 @@
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
 
 const useApplicationData = () => {
 
-  const [state, setState] = useState({users: []});
+  const [state, setState] = useState();
+  const [course, setCourse] = useState([]);
+  const [basket, setBasket] = useState([]);
+  const [count, setCount] = useState(0);
+
+
 
   useEffect(() => {
 
-    axios({
-      method: 'GET',
-      url: '/users' 
+    axios
+    .get('/api/coursesList')
+    
+    .then(res => {
+      console.log("Data", res.data);
+
+     setCourse(res.data);
+
+   // console.log("res", res.data[0]);
     })
-    .then(result => setState(prev => ({...prev, users: result.data})))
-    .catch(err => console.log(err));
+
 
   }, [])
 
   return {
     state, 
-    setState
+    course,
+    basket,
+    setBasket,
+    count,
+    setCount
   }
 
 }

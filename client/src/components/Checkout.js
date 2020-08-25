@@ -1,17 +1,31 @@
 import React from 'react';
-import { useStateValue } from './StateProvider';
 import './Checkout.css';
 import CheckoutProduct from './CheckoutProduct';
 import Subtotal from './Subtotal';
 
 
-function Checkout() {
-  const[{ basket }] = useStateValue();
+function Checkout(props) {
+
+  console.log("1, From remove", props.basket);
+
+  // const[{ basket }] = useStateValue();
+  function removeFromBasket(item) {
+    //console.log("obj", obj);
   
+    const newItems = props.basket.filter(basketItem => basketItem.id !== item.id);
+
+    props.setBasket(newItems);
+    console.log("2, From remove", props.basket);
+  }
+  
+  // function addToBasket(obj) {
+  //   props.setBasket(prev => [...prev, obj])
+  // }
+
   return (
     <div className="checkout">
       <div className="checkout__left">
-      {basket?.length === 0 ? (
+      {props.basket?.length === 0 ? (
         <div>
           <h2>Your shopping cart is Empty !! Checkout our latest courses !!</h2>
           <p>You have no items in the cart. Click "Add to cart" next to the courses </p>
@@ -20,26 +34,22 @@ function Checkout() {
         <div>
           <h2 className="checkout__title">Your shopping cart</h2>
           {/* List out all checkout products */}
-          {basket.map((item) => (
+          {props.basket.map((item) => (
             // console.log("Item from checkout", item);
            
             <CheckoutProduct
-              id={item.id}
-              title={item.title} 
-              description={item.description} 
-              price={item.price} 
-              thumbnail={item.thumbnail} 
-              content={item.content}
-              user_id={item.user_id}          
+              key={item.id} {...item}
+              onClick={() => removeFromBasket(item)}
+   
             />
           ))}
         </div>
         )
       }
       </div>
-      {basket.length > 0 && (
+      {props.basket?.length > 0 && (
         <div className="checkout__right">
-          <Subtotal />
+          <Subtotal basket={props.basket} />
         </div>
       )}
    

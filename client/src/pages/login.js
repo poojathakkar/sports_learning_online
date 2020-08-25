@@ -16,22 +16,10 @@ const Login = () => {
   const history = useHistory();
   const auth = useContext(AuthContext);
 
-
-  const handleChange = (name) => (e) => {
-    console.log("value1:", e);
-    const target = e.target;
-
-    console.log("target", target);
-    const value = target.value;
-
-    console.log("value", value);
-    // setState({
-    //   [name]: value
-    // });
-  }
-
   const handleSubmit = (e) => {
+    //this stops the refresh
     e.preventDefault();
+
 
     axios
     .post('/api/login', { email, password })
@@ -42,6 +30,7 @@ const Login = () => {
 
       if(res.data.role === 'student') {
         history.replace('/studenthomepage', state)
+        // history.push('/studenthomepage')
       } else {
         history.replace('/authorhomepage', state)
       }
@@ -74,7 +63,7 @@ const Login = () => {
             <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
           </div>
           <div className="FormField">
-            <button className="FormField__Button mr-20">Login</button> <Link to="/register" className="FormField__Link">Create an account</Link>
+            <button className="FormField__Button mr-20">Login</button><Link to="/register" className="FormField__Link">Create an account</Link>
           </div>
         </form>
       </div>

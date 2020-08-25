@@ -10,6 +10,10 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const usersRegister = require('./routes/register');
 const usersLogin = require('./routes/login');
+const coursesList = require('./routes/coursesList');
+const searchCourse = require('./routes/searchCourse');
+
+
 const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +34,10 @@ app.use('/', indexRouter(db));
 app.use('/users', usersRouter(db));
 app.use('/api/register', usersRegister(db));
 app.use('/api/login', usersLogin(db));
+app.use('/api/coursesList', coursesList(db));
+app.use('/api/searchCourse', searchCourse(db));
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
