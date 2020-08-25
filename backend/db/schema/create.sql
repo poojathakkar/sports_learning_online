@@ -27,8 +27,8 @@ CREATE TABLE enroll (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   course_id INTEGER REFERENCES courses(id) ON DELETE CASCADE,
-  date_added DATE NOT NULL,
-  last_modified DATE NOT NULL
+  date_added DATE DEFAULT NOW(),
+  last_modified DATE DEFAULT NOW()
 );
 
 CREATE TABLE comments (
