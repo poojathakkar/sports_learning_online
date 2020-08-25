@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import useApplicationData from './hooks/useApplicationData';
 import Login from './pages/login';
@@ -9,28 +9,23 @@ import Nav from './components/Nav';
 import Studenthomepage from './pages/studenthomepage';
 import AuthProvider from './components/AuthProvider';
 import Checkout from './components/Checkout';
-
-
-// const {state, setState}  = useApplicationData();
-//const userList = state.users.map(user => <li>{user.name} {user.email}</li>)
-
+import { AuthContext } from './components/AuthProvider';
 
 function App() {
 
-  const {state, course, setCourse, basket, setBasket, user, setUser} = useApplicationData();
+  const auth = useContext(AuthContext);
+  const {state, course, setCourse, basket, setBasket, user, setUser} = useApplicationData(auth.user);
 
    console.log("Courses", course);
    console.log("Baskets", basket);
-  console.log("BAsket Length", basket.length);
+   console.log("BAsket Length", basket.length);
 
     return (
       <>
-    <AuthProvider>
-
     
       <Router>
         <>
-         <Nav /> 
+        <Nav />
      
       
         <div className='app'>
@@ -67,28 +62,9 @@ function App() {
        
         </>
       </Router>
-      </AuthProvider>
+
       </>
-
-    
-      
     );
-
-  
 }
 
 export default App;
-
-
-
-// return (
-  //   <>
-  //   <h1>Users</h1>
-
-  //   <ul>
-  //     {userList}
-  //   </ul>
-
-  //   </>
-  //   );
-
