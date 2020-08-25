@@ -17,7 +17,7 @@ import Checkout from './components/Checkout';
 
 function App() {
 
-  const {state, course, setCourse, basket, setBasket} = useApplicationData();
+  const {state, course, setCourse, basket, setBasket, user, setUser} = useApplicationData();
 
    console.log("Courses", course);
    console.log("Baskets", basket);
@@ -30,7 +30,7 @@ function App() {
     
       <Router>
         <>
-        <Nav />
+         <Nav /> 
      
       
         <div className='app'>
@@ -41,7 +41,7 @@ function App() {
             </Route>
           
             <Route path='/login' >
-              <Login />
+              <Login user={user} setUser={setUser}/>
             </Route>
 
             <Route path='/checkout' >
@@ -57,7 +57,7 @@ function App() {
             <Route path='/studenthomepage'>
               <>
               <Header basket={basket} />
-              <Studenthomepage course={course} basket={basket} setBasket={setBasket}  />
+              <Studenthomepage course={course} basket={basket} setBasket={setBasket} user={user} />
 
               </>
             </Route>

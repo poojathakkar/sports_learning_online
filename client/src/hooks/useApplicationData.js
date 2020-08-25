@@ -7,6 +7,7 @@ const useApplicationData = () => {
   const [course, setCourse] = useState([]);
   const [basket, setBasket] = useState([]);
   const [count, setCount] = useState(0);
+  const [user, setUser] = useState({});
 
 
 
@@ -32,7 +33,9 @@ const useApplicationData = () => {
     basket,
     setBasket,
     count,
-    setCount
+    setCount,
+    user, 
+    setUser
   }
 
 }

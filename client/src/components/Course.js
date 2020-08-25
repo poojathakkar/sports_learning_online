@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Course.css';
+
+//import users from '../../../backend/routes/users';
+
 // import useApplicationData from '../hooks/useApplicationData';
 
 function Course(props) {
+
+  
+
+  console.log("courseprops:", props);
+  
 
   return (
     <div className="course">

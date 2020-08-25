@@ -26,6 +26,7 @@ const Login = () => {
     .then(res => {
       console.log("1", res.data);
      auth.setUser(res.data);
+     console.log("auth.setuser", auth.user);
      const state = { msg: 'Welcome!' };
 
       if(res.data.role === 'student') {
@@ -47,6 +48,7 @@ const Login = () => {
   }
 
     return (
+
       <div className="FormCenter">
         {danger &&
         <Alert color="danger">

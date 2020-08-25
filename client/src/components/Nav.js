@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useContext }  from 'react'
 import { Link } from 'react-router-dom';
 import './Nav.css';
-//import { AuthContext } from './AuthProvider';
+import { AuthContext } from './AuthProvider';
 
 function Nav() {
-  //const { user, setUser } = useContext(AuthContext)
+  const { user, setUser } = useContext(AuthContext)
+
+  function logOut() {
+    setUser(null);
+
+  }
+
   return (
    <>
     <div className='nav'>
@@ -15,8 +21,8 @@ function Nav() {
       </>
 
       <div className="nav__button">
-        {
-          // !user && (
+        
+      {!user && ( 
         <>
         <Link to="/login">
           <button className="nav__Button mr-20" >Login</button>
@@ -25,8 +31,16 @@ function Nav() {
           <button className="nav__Button mr-20" >Register</button>
         </Link> 
         </>
-           //)
-        }
+      )}
+
+      {
+        user && (
+          <Link to="/logout">
+          <button className="nav__Button mr-20" onClick={logOut} >Logout</button>
+        </Link> 
+          )
+        }    
+        
       </div>
 
     </div>

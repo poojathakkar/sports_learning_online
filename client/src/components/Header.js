@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import  SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; 
+import { AuthContext } from './AuthProvider';
 
 
 function Header(props) {
   //const [{ basket }] = useStateValue();
+  const { user, setUser } = useContext(AuthContext)
 
-   console.log("Inside basket", props.basket?.length);
+   console.log("headerUser", user);
 
   
 
@@ -42,7 +44,7 @@ function Header(props) {
       <Link to='/login' className='header__link'>
         <div className='header__option'>
           <span className='header__optionFirst'>Welcome</span>
-          <span className='header__optionSecond'>Nupur</span>
+          <span className='header__optionSecond'>{user.first_name}</span>
         </div>
       </Link> 
 

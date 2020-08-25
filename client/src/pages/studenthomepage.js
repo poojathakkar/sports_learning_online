@@ -1,14 +1,29 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './studenthomepage.css';
 import Course from '../components/Course';
 import axios from 'axios';
+import { AuthContext } from '../components/AuthProvider';
 // import useApplicationData from '../hooks/useApplicationData';
 
 function Studenthomepage(props) {
 
+  const auth = useContext(AuthContext);
   // const [course, setCourse] = useState();
   function addToBasket(obj) {
+    console.log("user_id", obj.id);
+    const currentUserId = Number(auth.user.id);
+    const currentCourseId = Number(obj.id);
+    
+    axios.post('api/addToCart', { currentUserId, currentCourseId })
+    .then(res => {
+      console.log("1", res.data);
     props.setBasket(prev => [...prev, obj])
+    })
+    .catch(error => {
+      console.log(error);
+      //setDanger(true);
+    })
+
   }
   
 
