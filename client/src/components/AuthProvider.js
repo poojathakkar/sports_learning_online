@@ -11,7 +11,6 @@ function AuthProvider(props) {
       setUser(user);
     }
   }
-
   return (
     <AuthContext.Provider value={authValue}>
       {props.children}

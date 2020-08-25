@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-//import useApplicationData from './hooks/useApplicationData';
+import useApplicationData from './hooks/useApplicationData';
 import Login from './pages/login';
 import Register from './pages/register';
 import Header from './components/Header'
@@ -14,7 +14,14 @@ import Checkout from './components/Checkout';
 // const {state, setState}  = useApplicationData();
 //const userList = state.users.map(user => <li>{user.name} {user.email}</li>)
 
+
 function App() {
+
+  const {state, course, setCourse, basket, setBasket} = useApplicationData();
+
+   console.log("Courses", course);
+   console.log("Baskets", basket);
+  console.log("BAsket Length", basket.length);
 
     return (
       <>
@@ -38,8 +45,8 @@ function App() {
             </Route>
 
             <Route path='/checkout' >
-              <Header />
-              <Checkout />
+              <Header basket={basket} />
+              <Checkout course={course} basket={basket} setCourse={setCourse} setBasket={setBasket} />
             </Route>
 
             <Route path='/profile/edit' >
@@ -49,8 +56,9 @@ function App() {
        
             <Route path='/studenthomepage'>
               <>
-              <Header />
-              <Studenthomepage />
+              <Header basket={basket} />
+              <Studenthomepage course={course} basket={basket} setBasket={setBasket}  />
+
               </>
             </Route>
 

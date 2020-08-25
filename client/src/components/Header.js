@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import  SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; 
-import { useStateValue } from './StateProvider';
 
 
-function Header() {
-  const [{ basket }] = useStateValue();
+function Header(props) {
+  //const [{ basket }] = useStateValue();
 
-  console.log("Inside basket", basket);
+   console.log("Inside basket", props.basket?.length);
+
+  
 
   return (
     <nav className='header'>
@@ -55,7 +56,7 @@ function Header() {
       <Link to='/checkout' className='header__link'>
         <div className='header__optionBasket'>
           <ShoppingCartIcon />
-  <span className='header__optionSecond header__basketCount'>{basket?.length}</span>
+            <span className='header__optionSecond header__basketCount'>{props.basket?.length}</span>
         </div>
       </Link>
     </div>
