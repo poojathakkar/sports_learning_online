@@ -1,26 +1,47 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Checkout.css';
 import CheckoutProduct from './CheckoutProduct';
 import Subtotal from './Subtotal';
-
+import axios from 'axios';
+import { AuthContext } from './AuthProvider';
 
 function Checkout(props) {
-
+  
+  const auth = useContext(AuthContext);
   console.log("1, From remove", props.basket);
 
-  // const[{ basket }] = useStateValue();
   function removeFromBasket(item) {
-    //console.log("obj", obj);
-  
-    const newItems = props.basket.filter(basketItem => basketItem.id !== item.id);
 
-    props.setBasket(newItems);
+    const user_id = Number(auth.user.id);
+    const course_id = Number(item.id);
+    console.log("remove_user", user_id)
+    console.log("remove course", course_id);
+
+    const newItems = props.basket.filter(basketItem => basketItem.id !== item.id);
+     
+
+    axios.delete(`/api/removeFromCart/${course_id}`)
+    .then(res => {
+      console.log("removeCart", res.data);
+      props.setBasket(newItems);
+      console.log(newItems);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+
+    //props.setBasket(newItems);
     console.log("2, From remove", props.basket);
   }
+
+  // axios
+  // .get('api/courseForUser')
   
-  // function addToBasket(obj) {
-  //   props.setBasket(prev => [...prev, obj])
-  // }
+  // .then(res => {
+  //   console.log("courseForUser", res.data);
+
+  //   setBasket(res.data);
+  // })
 
   return (
     <div className="checkout">

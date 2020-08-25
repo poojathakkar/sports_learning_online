@@ -1,7 +1,11 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
+//import { AuthContext } from '../components/AuthProvider';
 
-const useApplicationData = () => {
+
+const useApplicationData = (currentUser) => {
+
+  //const auth = useContext(AuthContext);
 
   const [state, setState] = useState();
   const [course, setCourse] = useState([]);
@@ -9,23 +13,28 @@ const useApplicationData = () => {
   const [count, setCount] = useState(0);
   const [user, setUser] = useState({});
 
-
-
   useEffect(() => {
 
     axios
     .get('/api/coursesList')
     
     .then(res => {
-      console.log("Data", res.data);
+      //console.log("Data", res.data);
 
      setCourse(res.data);
 
-   // console.log("res", res.data[0]);
     })
 
+      axios
+     .get('/api/courseForUser')
+  
+     .then(res => {
+      console.log("courseForUser", res.data);
 
-  }, [])
+     setBasket(res.data);
+    })
+
+  }, [currentUser])
 
   return {
     state, 
