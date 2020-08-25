@@ -6,6 +6,7 @@ module.exports = db => {
 
   router.post('/', (req, res) => {
     const {user_id, course_id} = req.body;
+    console.log(req.body);
     // const checkUser = {
     //   text: `SELECT * FROM users WHERE user_id = $1`,
     //   values: [user_id]

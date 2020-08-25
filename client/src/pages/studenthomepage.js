@@ -11,10 +11,10 @@ function Studenthomepage(props) {
   // const [course, setCourse] = useState();
   function addToBasket(obj) {
     console.log("user_id", obj.id);
-    const currentUserId = Number(auth.user.id);
-    const currentCourseId = Number(obj.id);
+    const user_id = Number(auth.user.id);
+    const course_id = Number(obj.id);
     
-    axios.post('api/addToCart', { currentUserId, currentCourseId })
+    axios.post('api/addToCart', { user_id, course_id })
     .then(res => {
       console.log("1", res.data);
     props.setBasket(prev => [...prev, obj])
