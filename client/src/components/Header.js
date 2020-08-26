@@ -4,6 +4,8 @@ import './Header.css';
 import  SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; 
 import { AuthContext } from './AuthProvider';
+//import Dropdown from 'react-dropdown';
+// import Profile from './Profile';
 
 
 function Header(props) {
@@ -12,11 +14,16 @@ function Header(props) {
 
    console.log("headerUser", user);
 
+   function logOut() {
+    setUser(null);
+
+  }
+
   
 
   return (
     <nav className='header'>
-    <Link to='/'>
+    <Link to='/studenthomepage'>
       <img className='header__logo' src='https://sportslearning.online/uploads/system/dark_logoPKSWizUk22DZzqR0u0jphsXg4f5dLslP.png' alt='' />
     </Link>
 
@@ -41,24 +48,30 @@ function Header(props) {
     </div>
 
     <div className='header__nav'>
-      <Link to='/login' className='header__link'>
+      <Link to='/profile' className='header__link'>
         <div className='header__option'>
-          <span className='header__optionFirst'>Welcome</span>
-          <span className='header__optionSecond'>{user.first_name}</span>
+          {/* <Profile /> */}
+             <span className='header__optionFirst'>Welcome</span>
+              <span className='header__optionSecond'>{user.first_name}</span> 
+       
         </div>
       </Link> 
 
-      <Link to='/profile/edit' className='header__link'>
-        <div className='header__option'>
-          <span className='header__optionFirst'>Your</span>
-          <span className='header__optionSecond'>Profile</span>
-        </div>
-      </Link>
+     
 
       <Link to='/checkout' className='header__link'>
         <div className='header__optionBasket'>
           <ShoppingCartIcon />
             <span className='header__optionSecond header__basketCount'>{props.basket?.length}</span>
+        </div>
+      </Link>
+
+      <Link to='/profile/edit' className='header__link'>
+        <div className='header__option'>
+        <Link to="/login">
+          <button className="nav__Button mr-20" onClick={logOut} >Logout</button>
+        </Link> 
+        
         </div>
       </Link>
     </div>

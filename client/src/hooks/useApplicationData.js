@@ -11,7 +11,7 @@ const useApplicationData = (currentUser) => {
   const [course, setCourse] = useState([]);
   const [basket, setBasket] = useState([]);
   const [count, setCount] = useState(0);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(currentUser);
 
   useEffect(() => {
 
