@@ -15,6 +15,7 @@ const searchCourse = require('./routes/searchCourse');
 const addToCart = require('./routes/addToCart');
 const removeFromCart = require('./routes/removeFromCart');
 const courseForUser = require('./routes/courseForUser');
+const profileEdit = require('./routes/profileEdit');
 
 
 const app = express();
@@ -42,6 +43,7 @@ app.use('/api/searchCourse', searchCourse(db));
 app.use('/api/addToCart', addToCart(db));
 app.use('/api/removeFromCart', removeFromCart(db));
 app.use('/api/courseForUser', courseForUser(db));
+app.use('/api/profileEdit', profileEdit(db));
 
 
 // catch 404 and forward to error handler
