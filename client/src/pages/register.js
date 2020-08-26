@@ -36,10 +36,10 @@ const Register = () => {
 
     if (name === 'role') {
       value = target.checked ? 'author' : 'student';
-      console.log('value1', value);
+     // console.log('value1', value);
     } else {
       value = target.value
-      console.log('value2', value);
+     // console.log('value2', value);
     }
 
 
@@ -52,13 +52,13 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    console.log('The form was submitted with the following data:');
-    console.log(`state: ${JSON.stringify(state)}`);
+    //console.log('The form was submitted with the following data:');
+   // console.log(`state: ${JSON.stringify(state)}`);
     
 
     axios.post(`/api/register`, {first_name: state.first_name, last_name: state.last_name, email: state.email, password: state.password, role: state.role})
       .then(res => {
-        console.log("res:", res.data);
+     //   console.log("res:", res.data);
         auth.setUser(res.data)
         const state = { msg: 'Registeration is successful!' };
 
@@ -87,12 +87,13 @@ const Register = () => {
 
       <form onSubmit={handleSubmit} className='FormFields'>
         <div className='FormField'>
+          {/* <h1><b>Please fill in this form to create an account</b></h1> */}
           <label className='FormField__Label' htmlFor='first_name'>First Name</label>
           <input type='text' id='first_name' className='FormField__Input' placeholder='Enter your first name' name='first_name' value={state.first_name} onChange={handleChange('first_name')} required/>
         </div>
         <div className='FormField'>
           <label className='FormField__Label' htmlFor='last_name'>Last Name</label>
-          <input type='text' id='last_name' className='FormField__Input' placeholder='Enter your last name' name='last_name' value={state.last_name} onChange={handleChange('last_name')} />
+          <input type='text' id='last_name' className='FormField__Input' placeholder='Enter your last name' name='last_name' value={state.last_name} onChange={handleChange('last_name')} required/>
         </div>
         <div className='FormField'>
           <label className='FormField__Label' htmlFor='email'>E-Mail Address</label>

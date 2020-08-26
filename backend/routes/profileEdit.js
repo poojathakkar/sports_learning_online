@@ -1,4 +1,5 @@
 const express = require('express');
+const users = require('./users');
 const router = express.Router();
 
 module.exports = db => {
@@ -13,17 +14,17 @@ module.exports = db => {
     const query = {
       text: 'UPDATE users SET first_name=$1, last_name=$2, email=$3, role=$4 WHERE id=$5;',
       values: [first_name, last_name, email, role, userId]
-    };
-
+    }
+   
     db.query(query)
-      .then(result => res.json(result)
-      )
+      .then(result => {
+         res.json(result);
+      })
       .catch(err => {
         console.error(err);
         res.status(500);
-        res.json({ error: "Error while updating status" })
+        res.json({ error: "Error while updating profile" })
       });
   });
-
   return router;
 };

@@ -9,7 +9,7 @@ function Course(props) {
 
   
 
-  console.log("courseprops:", props);
+  //console.log("courseprops:", props);
   
 
   return (

@@ -6,7 +6,7 @@ import { getBasketTotal } from '../pages/reducer';
 
 function Subtotal(props) {
   // const [{ basket }] = useStateValue();
-console.log("From subtotal", props);
+//console.log("From subtotal", props);
 
 // export const getBasketTotal = (basket) => 
 // basket?.reduce((amount, item) => Number(item.price) + amount, 0);

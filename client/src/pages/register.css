@@ -1,5 +1,7 @@
 .FormCenter {
-  margin-bottom: 100px;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
 } 
 .FormField {
   margin-bottom: 40px;

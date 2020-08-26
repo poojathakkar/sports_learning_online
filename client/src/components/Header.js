@@ -4,8 +4,7 @@ import './Header.css';
 import  SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; 
 import { AuthContext } from './AuthProvider';
-//import Dropdown from 'react-dropdown';
-// import Profile from './Profile';
+
 
 
 function Header(props) {
@@ -48,9 +47,8 @@ function Header(props) {
     </div>
 
     <div className='header__nav'>
-      <Link to='/profile' className='header__link'>
+      <Link to='/editProfile' className='header__link'>
         <div className='header__option'>
-          {/* <Profile /> */}
              <span className='header__optionFirst'>Welcome</span>
               <span className='header__optionSecond'>{user.first_name}</span> 
        
@@ -66,14 +64,14 @@ function Header(props) {
         </div>
       </Link>
 
-      <Link to='/profile/edit' className='header__link'>
+      {/* <Link to='/profile/edit' className='header__link'> */}
         <div className='header__option'>
         <Link to="/login">
           <button className="nav__Button mr-20" onClick={logOut} >Logout</button>
         </Link> 
         
         </div>
-      </Link>
+      {/* </Link> */}
     </div>
  
     </nav>

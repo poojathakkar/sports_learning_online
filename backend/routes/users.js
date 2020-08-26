@@ -16,8 +16,6 @@ module.exports = (db) => {
   });
 
   router.post('/', (req, res) => {
-    console.log("req.body:", req.body);
-    // extract the data from req.body
     const {first_name, last_name, email, password, role} = req.body;
 
     // create an insert query in the db
@@ -30,10 +28,7 @@ module.exports = (db) => {
       .query(query)
       .then(result => res.json(result[0]))
       .catch(err => console.log(err));
-
     // return the newly created user back
-
-
   });
 
   return router;

@@ -29,7 +29,7 @@ const useApplicationData = (currentUser) => {
      .get('/api/courseForUser')
   
      .then(res => {
-      console.log("courseForUser", res.data);
+      //console.log("courseForUser", res.data);
 
      setBasket(res.data);
     })

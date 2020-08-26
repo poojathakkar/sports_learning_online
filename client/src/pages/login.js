@@ -24,9 +24,9 @@ const Login = () => {
     axios
     .post('/api/login', { email, password })
     .then(res => {
-      console.log("1", res.data);
+     // console.log("1", res.data);
      auth.setUser(res.data);
-     console.log("auth.setuser", auth.user);
+    // console.log("auth.setuser", auth.user);
      const state = { msg: 'Welcome!' };
 
       if(res.data.role === 'student') {
@@ -36,9 +36,6 @@ const Login = () => {
         history.replace('/authorhomepage', state)
       }
     
-    // console.log('The form was submitted with the following data:');
-    // console.log(`email: ${JSON.stringify(email)}`);
-    // console.log(`password: ${JSON.stringify(password)}`);
     })
     .catch(error => {
       console.log(error);
@@ -57,6 +54,7 @@ const Login = () => {
       }
         <form onSubmit={handleSubmit} className="FormFields">
           <div className="FormField">
+            {/* <h1><b>Login </b></h1> */}
             <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
             <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
           </div>
