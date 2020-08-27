@@ -1,24 +1,19 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import  SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; 
 import { AuthContext } from './AuthProvider';
-
-
+//import SearchBar from './SearchBar';
 
 function Header(props) {
-  //const [{ basket }] = useStateValue();
-  const { user, setUser } = useContext(AuthContext)
 
-   console.log("headerUser", user);
+  const { user, setUser } = useContext(AuthContext);
+  const [value, setValue] = useState("");
 
-   function logOut() {
+  function logOut() {
     setUser(null);
-
-  }
-
-  
+  }  
 
   return (
     <nav className='header'>
@@ -40,22 +35,31 @@ function Header(props) {
       </Link>
     </div>
 
-   
-    <div className='header__search'>
-      <input type='text' className='header__searchInput' />
-      <SearchIcon className='header__searchIcon' />
-    </div>
-
+    <div className="header__search">
+      <form className="search__form" onSubmit={event => event.preventDefault()}>
+        <input
+          className="radius"
+          spellCheck="false"
+          placeholder="Search courses"
+          name="search"
+          type="text"
+          value={value}
+          onChange={event => {setValue(event.target.value);props.onSearchTermUpdate(event.target.value)}}
+        />
+        <Link to= '/result' >
+          <SearchIcon className='header__searchIcon' />
+        </Link>
+        
+      </form>
+    </div>  
+    
     <div className='header__nav'>
       <Link to='/editProfile' className='header__link'>
         <div className='header__option'>
-             <span className='header__optionFirst'>Welcome</span>
-              <span className='header__optionSecond'>{user.first_name}</span> 
-       
+            <span className='header__optionFirst'>Welcome</span>
+            <span className='header__optionSecond'>{user.first_name}</span> 
         </div>
       </Link> 
-
-     
 
       <Link to='/checkout' className='header__link'>
         <div className='header__optionBasket'>
