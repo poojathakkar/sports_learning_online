@@ -5,14 +5,17 @@ const router = express.Router();
 module.exports = db => {
 
   router.post('/', (req, res) => {
-    const {user_id, course_id} = req.body;
+
+    let userId = req.session['user_id'];
+    const { title, description, price, thumbnail, content } = req.body;
     console.log(req.body);
    
     const query = {
       text: `
-      INSERT INTO enroll (user_id, course_id) VALUES ($1, $2) RETURNING *;
+      INSERT INTO courses (title, description, price, thumbnail, content, user_id) 
+      VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;
     `,
-      values: [user_id, course_id]
+      values: [title, description, price, thumbnail, content, userId]
     }
     db.query(query)
       .then(result => res.json(result))

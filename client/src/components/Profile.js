@@ -50,10 +50,6 @@ function Profile(props) {
           <input type='email' id='email' className='FormField__Input' placeholder='Enter your email' name='email' value={user.email} onChange={(e) => handleChange('email', e)} required/>
         </div>
         <div className='FormField'>
-          <label className='FormField__Label' htmlFor='password'>*Password</label>
-          <input type='password' id='password' className='FormField__Input' placeholder='Enter your password' name='password' value={user.password} onChange={(e) => handleChange('password', e)} required/>
-        </div>
-        <div className='FormField'>
           <label className='FormField__Label' htmlFor='role'>*Role</label>
           <input type='text' id='role' className='FormField__Input' placeholder='Are you an author or student' name='role' value={user.role} onChange={(e) => handleChange('role', e)} required/>
         </div>
