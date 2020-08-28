@@ -14,6 +14,8 @@ import { AuthContext } from './components/AuthProvider';
 import Profile from './components/Profile';
 import Result from './pages/result';
 import CoursesList from './pages/CoursesList';
+import AuthorHeader from './components/AuthorHeader';
+import NewCourse from './pages/NewCourse';
 //import SearchBar from './components/SearchBar';
 
 function App() {
@@ -31,11 +33,15 @@ function App() {
           <div className='app'>
             <Switch>
               <Route path='/' exact>
-                {user ? (
+               
+                {user && user.role === 'student' && (
                   <Redirect to='/studenthomepage' />
-                ) : (
-                  <Redirect to='/login' />
                 )}
+                {user && user.role === 'author' && (
+                  <Redirect to='/authorhomepage' />
+                )}
+                
+               
               </Route>
 
               <Route path='/register'>
@@ -43,6 +49,7 @@ function App() {
               </Route>
           
               <Route path='/login' >
+                {/* <Nav /> */}
                 <Login user={user} setUser={setUser}/>
               </Route>
 
@@ -64,7 +71,20 @@ function App() {
                   <Profile user={user} setUser={setUser} history={history} />
                 </>                         
               }/>
-  
+
+              <Route path='/newCourse' render={({history}) => 
+                <>
+                  <AuthorHeader user={user} setUser={setUser} />
+                  <NewCourse user={user} setUser={setUser} history={history} />
+                </>
+              }
+              />
+               
+            
+
+              
+             
+
               <Route path='/studenthomepage'>
                 <>
                   <Header basket={basket} onSearchTermUpdate={setSearchTerm}/>
@@ -78,11 +98,11 @@ function App() {
               </Route>
 
               <Route path='/authorhomepage'>
-              <Header basket={basket} onSearchTermUpdate={setSearchTerm}/>
-              <Authorhomepage />
-
-               
+                <AuthorHeader />
+                <Authorhomepage user={user}/>
               </Route>
+
+              
             </Switch>
           </div>
         </>

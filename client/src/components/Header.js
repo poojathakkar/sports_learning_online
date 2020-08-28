@@ -17,9 +17,9 @@ function Header(props) {
 
   return (
     <nav className='header'>
-    <Link to='/studenthomepage'>
-      <img className='header__logo' src='https://sportslearning.online/uploads/system/dark_logoPKSWizUk22DZzqR0u0jphsXg4f5dLslP.png' alt='' />
-    </Link>
+      <Link to='/studenthomepage'>
+        <img className='header__logo' src='https://sportslearning.online/uploads/system/dark_logoPKSWizUk22DZzqR0u0jphsXg4f5dLslP.png' alt='' />
+      </Link>
 
     <div className='header__nav'>
       <Link to='/channels' className='header__link'>
@@ -54,12 +54,7 @@ function Header(props) {
     </div>  
     
     <div className='header__nav'>
-      <Link to='/editProfile' className='header__link'>
-        <div className='header__option'>
-            <span className='header__optionFirst'>Welcome</span>
-            <span className='header__optionSecond'>{user.first_name}</span> 
-        </div>
-      </Link> 
+      
 
       <Link to='/checkout' className='header__link'>
         <div className='header__optionBasket'>
@@ -67,6 +62,13 @@ function Header(props) {
             <span className='header__optionSecond header__basketCount'>{props.basket?.length}</span>
         </div>
       </Link>
+
+      <Link to='/editProfile' className='header__link'>
+        <div className='header__option'>
+            <span className='header__optionFirst'>Welcome</span>
+            <span className='header__optionSecond'>{user.first_name}</span> 
+        </div>
+      </Link> 
 
       {/* <Link to='/profile/edit' className='header__link'> */}
         <div className='header__option'>

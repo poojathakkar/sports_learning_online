@@ -1,0 +1,49 @@
+.newcourse {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+}
+
+.newcourse__formfield {
+  margin-bottom: 40px;
+}
+
+.newcourse__label {
+  display: block;
+  text-transform: uppercase;
+  font-size: .9em;
+  color: white;
+}
+
+.course__input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  border-bottom: 1px solid #445366;
+  font-size: 1em;
+  font-weight: 300;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.coursetitle__input::placeholder {
+  color: #616E7F;
+}
+
+.course__input--content {
+  margin-top: 10px;
+  height: 100px;
+  width: 500px;
+}
+.newcourse__button {
+  background-color: #52C4B9;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  padding: 15px 70px;
+  font-size: .8em;
+  font-weight: 500;
+}

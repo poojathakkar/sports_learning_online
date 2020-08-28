@@ -1,0 +1,29 @@
+.authorcourse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  max-height: 400px;
+  min-width: 100px;
+  margin: 10px;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+.authorcourse__info {
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.authorcourse__price {
+  margin-top: 5px;
+}
+
+.authorcourse__img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
