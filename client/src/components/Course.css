@@ -1,6 +1,5 @@
 .course {
   display: flex;
-  /* background-color: #4C5D72; */
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
@@ -10,7 +9,6 @@
   margin: 10px;
   width: 100%;
   background-color: white;
-  /* height: 800px; */
   z-index: 1;
 }
 

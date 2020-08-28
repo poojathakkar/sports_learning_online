@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import './authorhomepage.css';
 
-function authorhomepage() {
+
+function Authorhomepage() {
   return (
-    <div>
+    <div className="authorhome">
+      <img className="authorhome__img" src="https://dev.sportslearning.online/uploads/system/banner-home-2.jpg" alt=""/>
       
     </div>
   )
 }
 
-export default authorhomepage
+export default Authorhomepage
