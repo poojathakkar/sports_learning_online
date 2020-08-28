@@ -14,15 +14,10 @@ const useApplicationData = (currentUser) => {
   const [user, setUser] = useState(currentUser);
 
   useEffect(() => {
-
     axios
     .get('/api/coursesList')
-    
     .then(res => {
-      //console.log("Data", res.data);
-
      setCourse(res.data);
-
     })
 
       axios

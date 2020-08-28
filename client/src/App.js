@@ -7,11 +7,13 @@ import Header from './components/Header'
 import './App.css';
 import Nav from './components/Nav';
 import Studenthomepage from './pages/studenthomepage';
+import Authorhomepage from './pages/authorhomepage';
 import AuthProvider from './components/AuthProvider';
 import Checkout from './components/Checkout';
 import { AuthContext } from './components/AuthProvider';
 import Profile from './components/Profile';
 import Result from './pages/result';
+import CoursesList from './pages/CoursesList';
 //import SearchBar from './components/SearchBar';
 
 function App() {
@@ -68,6 +70,18 @@ function App() {
                   <Header basket={basket} onSearchTermUpdate={setSearchTerm}/>
                   <Studenthomepage course={course} basket={basket} setBasket={setBasket} user={user} />
                 </>
+              </Route>
+
+              <Route path='/courses'>
+                <Header onSearchTermUpdate={setSearchTerm} user={user} setUser={setUser} />
+                <CoursesList course={course} setCourse={setCourse} user={user} />
+              </Route>
+
+              <Route path='/authorhomepage'>
+              <Header basket={basket} onSearchTermUpdate={setSearchTerm}/>
+              <Authorhomepage />
+
+               
               </Route>
             </Switch>
           </div>
