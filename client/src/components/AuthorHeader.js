@@ -67,7 +67,7 @@ function AuthorHeader() {
 
         <div className='header__option'>
           <Link to="/login">
-            <button className="nav__Button mr-20" >Logout</button>
+            <button className="authornav__Button mr-20" >Logout</button>
           </Link> 
         </div>
     
