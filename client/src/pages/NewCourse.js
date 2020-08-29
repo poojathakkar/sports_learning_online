@@ -21,7 +21,7 @@ function NewCourse(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('/api/addCourse', {title: course.title, description: course.description, price: course.price, thumbnail: course.thumbnail, content: course.content})
+    axios.post('/api/addCourse', {title: course.title, description: course.description, price: course.price, thumbnail: course.thumbnail, content: course.content, tags: course.tags })
         .then(res => {
           props.history.push('/authorhomepage')
         })
@@ -58,11 +58,16 @@ function NewCourse(props) {
           <input type="text" id="course__input" placeholder="Image for course"  className="course__input" name='course_thumbnail' value={course.thumbnail} onChange={(e) => handleChange('thumbnail', e)} required />
         </div>
 
-
         <div className="newcourse__formfield">
           <label className="newcourse__label" htmlFor="course_description">*Content 
           </label>
           <input type="text" id="course__input" placeholder="Content for course"  className="course__input--content" name='course_content' value={course.content} onChange={(e) => handleChange('content', e)} required />
+        </div>
+
+        <div className="newcourse__formfield">
+          <label className="newcourse__label" htmlFor="course_description">*Tags
+          </label>
+          <input type="text" id="course__input" placeholder="Tags for course"  className="course__input--content" name='course_tags' value={course.tags} onChange={(e) => handleChange('tags', e)} required />
         </div>
 
         <div className="newcourse__formfield">
