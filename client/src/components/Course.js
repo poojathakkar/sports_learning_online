@@ -1,7 +1,11 @@
 import React, { useContext } from 'react';
 import './Course.css';
+import { AuthContext } from './AuthProvider';
+
 
 function Course(props) {
+  const { user, setUser } = useContext(AuthContext);
+
 
   return (
     <div className="course">

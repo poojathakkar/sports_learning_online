@@ -16,6 +16,8 @@ import Result from './pages/result';
 import CoursesList from './pages/CoursesList';
 import AuthorHeader from './components/AuthorHeader';
 import NewCourse from './pages/NewCourse';
+import AuthorCourseLists from './pages/AuthorCourseLists';
+import UpdateCourse from './components/UpdateCourse';
 //import SearchBar from './components/SearchBar';
 
 function App() {
@@ -39,9 +41,7 @@ function App() {
                 )}
                 {user && user.role === 'author' && (
                   <Redirect to='/authorhomepage' />
-                )}
-                
-               
+                )}               
               </Route>
 
               <Route path='/register'>
@@ -80,11 +80,6 @@ function App() {
               }
               />
                
-            
-
-              
-             
-
               <Route path='/studenthomepage'>
                 <>
                   <Header basket={basket} onSearchTermUpdate={setSearchTerm}/>
@@ -97,10 +92,24 @@ function App() {
                 <CoursesList course={course} setCourse={setCourse} user={user} />
               </Route>
 
+              <Route path='/authorcourses'>
+                <AuthorHeader user={user} setUser={setUser} />
+                <AuthorCourseLists user={user} course={course} setCourse={setCourse}/>
+              </Route>
+
               <Route path='/authorhomepage'>
+                {user && user.role === "author" ? <>
                 <AuthorHeader />
                 <Authorhomepage user={user}/>
+                </> : <Redirect to='/' />}  
               </Route>
+
+              <Route path='/editCourse' render={({history}) =>
+                <>
+                  <AuthorHeader user={user} setUser={setUser} />
+                  <UpdateCourse user={user} setUser={setUser} history={history} />
+                </>                         
+              }/>
 
               
             </Switch>

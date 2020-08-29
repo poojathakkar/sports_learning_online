@@ -64,6 +64,12 @@ function NewCourse(props) {
           <input type="text" id="course__input" placeholder="Content for course"  className="course__input--content" name='course_content' value={course.content} onChange={(e) => handleChange('content', e)} required />
         </div>
 
+        {/* <div className="newcourse__formfield">
+          <label className="newcourse__label" htmlFor="course_tags">*Tags 
+          </label>
+          <input type="text" id="course__input" placeholder="Tags for course"  className="course__input--tags" name='course_tags' value={course.tags} onChange={(e) => handleChange('tags', e)} required />
+        </div> */}
+
         <div className="newcourse__formfield">
           <label className="newcourse__label" htmlFor="course_description">*Tags
           </label>
