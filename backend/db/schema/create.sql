@@ -20,6 +20,7 @@ CREATE TABLE courses (
   price DECIMAL NOT NULL,
   thumbnail VARCHAR(255) NOT NULL,
   content TEXT NOT NULL,
+  tags TEXT[] NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
