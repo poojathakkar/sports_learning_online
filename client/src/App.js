@@ -8,7 +8,6 @@ import './App.css';
 import Nav from './components/Nav';
 import Studenthomepage from './pages/studenthomepage';
 import Authorhomepage from './pages/authorhomepage';
-import AuthProvider from './components/AuthProvider';
 import Checkout from './components/Checkout';
 import { AuthContext } from './components/AuthProvider';
 import Profile from './components/Profile';
@@ -17,13 +16,12 @@ import CoursesList from './pages/CoursesList';
 import AuthorHeader from './components/AuthorHeader';
 import NewCourse from './pages/NewCourse';
 import AuthorCourseLists from './pages/AuthorCourseLists';
-import UpdateCourse from './components/UpdateCourse';
-//import SearchBar from './components/SearchBar';
+import EditCourse from './components/EditCourse';
 
 function App() {
 
   const {user, setUser} = useContext(AuthContext);
-  const {state, course, setCourse, basket, setBasket} = useApplicationData(user);
+  const {course, setCourse, basket, setBasket} = useApplicationData(user);
   const [searchTerm, setSearchTerm] = useState("");
 
 
@@ -49,7 +47,6 @@ function App() {
               </Route>
           
               <Route path='/login' >
-                {/* <Nav /> */}
                 <Login user={user} setUser={setUser}/>
               </Route>
 
@@ -71,6 +68,13 @@ function App() {
                   <Profile user={user} setUser={setUser} history={history} />
                 </>                         
               }/>
+
+              <Route path='/editCourse' render={({history}) =>
+                <>
+                  <AuthorHeader user={user} setUser={setUser} />
+                  <EditCourse user={user} setUser={setUser} course={course} setCourse={setCourse} history={history} />
+                </>                         
+              }/>   
 
               <Route path='/newCourse' render={({history}) => 
                 <>
@@ -102,16 +106,7 @@ function App() {
                 <AuthorHeader />
                 <Authorhomepage user={user}/>
                 </> : <Redirect to='/' />}  
-              </Route>
-
-              <Route path='/editCourse' render={({history}) =>
-                <>
-                  <AuthorHeader user={user} setUser={setUser} />
-                  <UpdateCourse user={user} setUser={setUser} history={history} />
-                </>                         
-              }/>
-
-              
+              </Route>   
             </Switch>
           </div>
         </>

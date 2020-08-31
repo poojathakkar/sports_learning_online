@@ -1,18 +1,13 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import './Checkout.css';
 import CheckoutProduct from './CheckoutProduct';
 import Subtotal from './Subtotal';
 import axios from 'axios';
-import { AuthContext } from './AuthProvider';
 
 function Checkout(props) {
   
-  const auth = useContext(AuthContext);
-
   function removeFromBasket(item) {
-
-    const user_id = Number(auth.user.id);
-    const course_id = Number(item.id);
+    const course_id = item.id;
     const newItems = props.basket.filter(basketItem => basketItem.id !== item.id);
 
     axios.delete(`/api/removeFromCart/${course_id}`)
@@ -23,6 +18,7 @@ function Checkout(props) {
       console.log(error);
     })
   }
+
   return (
     <div className="checkout">
       <div className="checkout__left">
@@ -34,14 +30,10 @@ function Checkout(props) {
       ) : (
         <div>
           <h2 className="checkout__title">Your shopping cart</h2>
-          {/* List out all checkout products */}
           {props.basket.map((item) => (
-            // console.log("Item from checkout", item);
-           
             <CheckoutProduct
               key={item.id} {...item}
               onClick={() => removeFromBasket(item)}
-   
             />
           ))}
         </div>
@@ -52,8 +44,7 @@ function Checkout(props) {
         <div className="checkout__right">
           <Subtotal basket={props.basket} />
         </div>
-      )}
-   
+      )}  
     </div>
   );
 }

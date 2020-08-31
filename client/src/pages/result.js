@@ -16,9 +16,21 @@ const [courses, setCourses] = useState([]);
     .catch(err => console.log(err.mesage));
   },[]);
 
+  function addToBasket(obj) {
+    const course_id = obj.id;
+    
+    axios.post('/api/addToCart', { course_id })
+    .then(res => {
+    props.setBasket(prev => [...prev, obj])
+    })
+    .catch(error => {
+     console.log(error);
+    })
+  }
+
   return (
     <div className="course__search">
-       {courses.map(c => <Course key={c.id} {...c} />)}
+       {courses.map(c => <Course key={c.id} {...c} onClick={() => addToBasket(c)} />)}
     </div>
   )
 }

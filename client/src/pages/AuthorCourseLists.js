@@ -18,7 +18,7 @@ function AuthorCourseLists() {
 
   return (
     <div className="authorcourse">
-      {course.map(c => <AuthorCoursesManage key={c.id} {...c} />
+      {course.map(c => <AuthorCoursesManage setCourse={setCourse} key={c.id} course_id={c.id} {...c} courseObj={c} />
       )}
     </div>
   )
