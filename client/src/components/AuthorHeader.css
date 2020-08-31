@@ -2,10 +2,12 @@
   background-color: #4C5D72;
   height: 70px;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   position: sticky;
   top: 0;
   z-index: 100;
+  /* justify-content: space-between; */
+  
   
 }
 .authorheader__logo {
@@ -14,10 +16,18 @@
   margin-left: 20px;
   margin-right: 20px;
 }
-.authorheader__nav {
+.authorheader__navOne {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.authorheader__navTwo {
+  display: flex;
+  /* flex-direction: flex-end; */
+  justify-content: space-evenly;
+  align-items: center;
+  
 }
 .authorheader__option {
   display: flex;
@@ -43,7 +53,7 @@
   text-decoration: none;
   /* justify-content: space-evenly; */
 }
-.authorheader__search {
+/* .authorheader__search {
   display: flex;
   flex: 1;
 }
@@ -58,7 +68,7 @@
   padding: 5px;
   height: 22px !important;
   background-color: #66DAC7
-}
+} */
 .authornav__Button {
   background-color: #66DAC7;
   color: white;

@@ -35,7 +35,7 @@ function CourseDetails(props) {
         {/* <div className="course__author">
           <p>{props.user_id}</p>
         </div> */}
-        <div className="course__right--content">
+        <div className="course__content">
           <p>{props.content}</p>
         </div> 
       </div>

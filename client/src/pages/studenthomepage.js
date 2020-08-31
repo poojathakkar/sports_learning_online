@@ -9,15 +9,15 @@ function Studenthomepage(props) {
   const auth = useContext(AuthContext);
   
   function addToBasket(obj) {
-    const user_id = Number(auth.user.id);
-    const course_id = Number(obj.id);
+    const user_id = auth.user.id;
+    const course_id = obj.id;
     
-    axios.post('api/addToCart', { user_id, course_id })
+    axios.post('api/addToCart', { course_id })
     .then(res => {
     props.setBasket(prev => [...prev, obj])
     })
     .catch(error => {
-     // console.log(error);
+     //console.log(error);
       //setDanger(true);
     })
 
@@ -30,6 +30,8 @@ function Studenthomepage(props) {
       <div className="home__row">
         {props.course.map(c => <Course key={c.id} {...c} onClick={() => addToBasket(c)}/>)}
       </div>
+     
+
     </div>
   )
 }
