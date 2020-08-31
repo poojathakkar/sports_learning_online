@@ -1,16 +1,11 @@
-import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
 import { AuthContext } from '../components/AuthProvider';
 import axios from 'axios';
 import './Profile.css';
 
-
 function Profile(props) {
 
   const { user, setUser } = useContext(AuthContext);
-  const auth = useContext(AuthContext);
-  const user_id = auth.user.id;
-
   const handleChange = (name, e) =>  {
     const target = e.target;
     let value = target.value;
@@ -25,7 +20,6 @@ function Profile(props) {
   
     axios.post(`/api/profileEdit`, {first_name: user.first_name, last_name: user.last_name, email: user.email, role: user.role})
     .then(res => {
-     // setUser(res.data);
      props.history.push(`/studenthomepage`)
     })
     .catch(error => {
@@ -37,7 +31,6 @@ function Profile(props) {
     <div className="profile">
       <form onSubmit={handleSubmit} className='FormFields'>
         <div className='FormField'>
-          {/* <h1><b>Update profile</b></h1> */}
           <label className='FormField__Label' htmlFor='first_name'>*First Name</label>
           <input type='text' id='first_name' className='FormField__Input' placeholder='Enter your first name' name='first_name' value={user.first_name} onChange={(e) => handleChange('first_name', e)} required/>
         </div>

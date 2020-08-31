@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './CoursesList.css';
 import CourseDetails from '../components/CourseDetails';
 
-
 function CoursesList(props) {
-
   return (
-   <div className="courselist">
-      {/* <div className="home__row"> */}
+    <div className="courselist">
         {props.course.map(c => <CourseDetails key={c.id} {...c} />)}
-      {/* </div> */}
     </div>
   )
 }

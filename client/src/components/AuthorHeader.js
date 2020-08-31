@@ -1,18 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './AuthorHeader.css';
-import  SearchIcon from '@material-ui/icons/Search';
 import { AuthContext } from './AuthProvider';
-
 
 function AuthorHeader() {
 
   const { user, setUser } = useContext(AuthContext);
-
   function logOut() {
     setUser(null);
   }  
-
 
   return (
     <nav className='authorheader'>
@@ -33,19 +29,7 @@ function AuthorHeader() {
           </span>
         </Link>
       </div>
-{/* 
-      <div className="authorheader__search">
-          <input
-            placeholder="Search courses"
-            name="search"
-            type="text"
-            value=""
-          />
-          <Link to= '/result' >
-            <SearchIcon className='authorheader__searchIcon' />
-          </Link>
-      </div>   */}
-    
+
       <div className='authorheader__navTwo'>
         <Link to='/newCourse' className='authorheader__link'>
           <div className='authorheader__option'>
@@ -75,9 +59,7 @@ function AuthorHeader() {
             <button className="authornav__Button mr-20" onClick={logOut}>Logout</button>
           </Link> 
         </div>
-    
       </div>
- 
     </nav>
   )
 }
