@@ -57,8 +57,8 @@ function App() {
 
               <Route path='/result' render={({history}) =>
                 <>
-                  <Header user={user} setUser={setUser} course={course} setCourse={setCourse} onSearchTermUpdate={setSearchTerm}/>
-                  <Result course={course} setCourse={setCourse} history={history} searchTerm={searchTerm}/>
+                  <Header user={user} setUser={setUser} course={course} setCourse={setCourse} onSearchTermUpdate={setSearchTerm} basket={basket} setBasket={setBasket} />
+                  <Result course={course} setCourse={setCourse} history={history} searchTerm={searchTerm} basket={basket} setBasket={setBasket} />
                 </>
               }/>
 
