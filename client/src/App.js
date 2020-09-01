@@ -72,7 +72,7 @@ function App() {
               <Route path='/editCourse' render={({history}) =>
                 <>
                   <AuthorHeader user={user} setUser={setUser} />
-                  <EditCourse user={user} setUser={setUser} course={course} setCourse={setCourse} history={history} />
+                  <EditCourse user={user} setUser={setUser}  history={history} />
                 </>                         
               }/>   
 
@@ -96,10 +96,13 @@ function App() {
                 <CoursesList course={course} setCourse={setCourse} user={user} />
               </Route>
 
-              <Route path='/authorcourses'>
+              <Route path='/authorcourses' render={({history}) => 
+              <>
                 <AuthorHeader user={user} setUser={setUser} />
-                <AuthorCourseLists user={user} course={course} setCourse={setCourse}/>
-              </Route>
+                <AuthorCourseLists user={user} course={course} setCourse={setCourse} history={history} />
+              </>
+              }
+              />
 
               <Route path='/authorhomepage'>
                 {user && user.role === "author" ? <>

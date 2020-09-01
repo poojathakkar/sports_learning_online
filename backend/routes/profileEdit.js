@@ -7,7 +7,7 @@ module.exports = db => {
   //When user clicks update button
 
   router.post('/', (req, res) => {
-    console.log("edit");
+   console.log("edit");
     const userId = req.session['user_id'];
     const {first_name, last_name, email, role} = req.body;
 

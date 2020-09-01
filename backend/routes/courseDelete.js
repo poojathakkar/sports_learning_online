@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 module.exports = db => {
+  router.delete('/:course_id', (req, res) => {
+    console.log("Hello")
+    // const { course_id } = req.body;
+    const { course_id } = req.params;
+    console.log("req params")
+   // const { course_id } = req.params;
 
-  router.post('/', (req, res) => {
-    const { course_id } = req.body
 
     const query = {
       text: 'DELETE FROM courses WHERE id = $1',
