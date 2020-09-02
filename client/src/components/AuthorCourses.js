@@ -1,6 +1,7 @@
 import React from 'react'
 import './AuthorCourses.css';
 
+//Calling this component from authorhomepage
 function AuthorCourses(props) {
   return (
     <div className="authorcourse">
@@ -12,7 +13,6 @@ function AuthorCourses(props) {
         </p>
       </div>
       <img className="authorcourse__img" src={props.thumbnail} alt="" />
-     
     </div>
   )
 }

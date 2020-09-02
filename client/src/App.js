@@ -18,6 +18,7 @@ import NewCourse from './pages/NewCourse';
 import AuthorCourseLists from './pages/AuthorCourseLists';
 import EditCourse from './components/EditCourse';
 import Report from './components/Report';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -89,6 +90,7 @@ function App() {
                 <>
                   <Header basket={basket} onSearchTermUpdate={setSearchTerm}/>
                   <Studenthomepage course={course} basket={basket} setBasket={setBasket} user={user} />
+                  <Footer />
                 </>
               </Route>
 
@@ -109,15 +111,14 @@ function App() {
                 {user && user.role === "author" ? <>
                 <AuthorHeader />
                 <Authorhomepage user={user}/>
-                </> : <Redirect to='/' />}  
+                </> : <Redirect to='/' />}
+                <Footer />
               </Route>   
-
 
               <Route path='/revenueReport'>
                 <AuthorHeader />
                 <Report />
               </Route>
-
             </Switch>
           </div>
         </>

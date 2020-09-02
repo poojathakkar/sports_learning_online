@@ -3,12 +3,11 @@ import './Report.css';
 import axios from 'axios';
 
 function BarGroup(props) {
-  let barPadding = 2
-  let barColour = '#348AA7'
-  let widthScale = d => d * 2
-
-  let width = widthScale(props.d.value)
-  let yMid = props.barHeight * 0.5
+  const barPadding = 2
+  const barColour = '#348AA7'
+  const widthScale = d => d * 2
+  const width = widthScale(props.d.value)
+  const yMid = props.barHeight * 0.5
   
   return <g className="bar-group">
     <text className="name-label" x="-6" y={yMid} alignmentBaseline="middle" >{props.d.name}</text>
@@ -19,6 +18,7 @@ function BarGroup(props) {
 
 function Report() {
 
+  const barHeight = 30;
   const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -31,14 +31,9 @@ function Report() {
       .catch(err => {
         console.log(err);
       })
-
     }, [])
-   
 
-
-    let barHeight = 30
-        
-    let barGroups = data.map((d, i) => 
+    const barGroups = data.map((d, i) => 
       <g transform={`translate(0, ${i * barHeight})`}>                                           
         <BarGroup d={d} barHeight={barHeight} />
       </g>)                         

@@ -5,16 +5,9 @@ import { getBasketTotal } from '../pages/reducer';
 
 
 function Subtotal(props) {
-  // const [{ basket }] = useStateValue();
-//console.log("From subtotal", props);
-
-// export const getBasketTotal = (basket) => 
-// basket?.reduce((amount, item) => Number(item.price) + amount, 0);
-
 
   return (
     <div className="subtotal">
-      {/* Price */}
       <CurrencyFormat
         renderText={(value) => (
           <>
@@ -26,7 +19,6 @@ function Subtotal(props) {
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}
-      
       />
       <button>Proceed to checkout</button>
     </div>

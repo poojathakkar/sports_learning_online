@@ -4,8 +4,8 @@ import './AuthorHeader.css';
 import { AuthContext } from './AuthProvider';
 
 function AuthorHeader() {
-
   const { user, setUser } = useContext(AuthContext);
+
   function logOut() {
     setUser(null);
   }  
@@ -31,6 +31,7 @@ function AuthorHeader() {
       </div>
 
       <div className='authorheader__navTwo'>
+
         <Link to='/newCourse' className='authorheader__link'>
           <div className='authorheader__option'>
             <span className='authorheader__optionFirst'>Create
