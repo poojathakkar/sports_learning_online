@@ -12,7 +12,8 @@ module.exports = db => {
       FROM courses
       JOIN enroll on courses.id=enroll.course_id
       WHERE courses.user_id = $1
-      GROUP BY to_char(enroll.date_added, 'MON')`,
+      GROUP BY to_char(enroll.date_added, 'MON')
+      ORDER BY SUM(courses.price) DESC`,
       values: [userId]
     };
     db.query(query)
