@@ -17,6 +17,7 @@ import AuthorHeader from './components/AuthorHeader';
 import NewCourse from './pages/NewCourse';
 import AuthorCourseLists from './pages/AuthorCourseLists';
 import EditCourse from './components/EditCourse';
+import Report from './components/Report';
 
 function App() {
 
@@ -110,6 +111,13 @@ function App() {
                 <Authorhomepage user={user}/>
                 </> : <Redirect to='/' />}  
               </Route>   
+
+
+              <Route path='/revenueReport'>
+                <AuthorHeader />
+                <Report />
+              </Route>
+
             </Switch>
           </div>
         </>
