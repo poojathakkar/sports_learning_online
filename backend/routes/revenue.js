@@ -8,11 +8,11 @@ module.exports = db => {
     console.log("course_user", userId);
     
     const query = {
-      text: `SELECT EXTRACT(month from enroll.date_added), SUM(courses.price)
+      text: `SELECT to_char(enroll.date_added, 'MON') AS name , SUM(courses.price) AS value
       FROM courses
       JOIN enroll on courses.id=enroll.course_id
       WHERE courses.user_id = $1
-      GROUP BY EXTRACT(month from enroll.date_added)`,
+      GROUP BY to_char(enroll.date_added, 'MON')`,
       values: [userId]
     };
     db.query(query)
