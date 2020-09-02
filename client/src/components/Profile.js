@@ -20,7 +20,12 @@ function Profile(props) {
   
     axios.post(`/api/profileEdit`, {first_name: user.first_name, last_name: user.last_name, email: user.email, role: user.role})
     .then(res => {
-     props.history.push(`/studenthomepage`)
+      {user.role === 'student' &&
+        props.history.push(`/studenthomepage`)
+      }
+      {user.role === 'author' &&
+        props.history.push(`/authorhomepage`)
+      }
     })
     .catch(error => {
       console.log(error);

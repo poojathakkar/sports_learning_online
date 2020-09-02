@@ -21,6 +21,7 @@ const addCourse = require('./routes/addCourse');
 const courseUpdate = require('./routes/courseUpdate');
 const courseEdit = require('./routes/courseEdit');
 const courseDelete = require('./routes/courseDelete');
+const revenue = require('./routes/revenue');
 
 const app = express();
 // view engine setup
@@ -53,6 +54,7 @@ app.use('/api/addCourse', addCourse(db));
 app.use('/api/courseUpdate', courseUpdate(db));
 app.use('/api/courseEdit', courseEdit(db));
 app.use('/api/courseDelete', courseDelete(db));
+app.use('/api/revenue', revenue(db));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
