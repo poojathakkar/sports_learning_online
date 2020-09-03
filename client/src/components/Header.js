@@ -13,12 +13,15 @@ function Header(props) {
   function logOut() {
     setUser(null);
   }  
+  
 
   return (
     <nav className='header'>
       <Link to='/studenthomepage'>
         <img className='header__logo' src='https://sportslearning.online/uploads/system/dark_logoPKSWizUk22DZzqR0u0jphsXg4f5dLslP.png' alt='' />
       </Link>
+
+      
       <div className='header__nav'>
         <Link to='/channels' className='header__link'>
           <span className='header__optionLine'>
@@ -36,30 +39,42 @@ function Header(props) {
           <input
             className="radius"
             spellCheck="false"
-            placeholder="Search courses"
             name="search"
             type="text"
             value={value}
             onChange={event => {setValue(event.target.value);props.onSearchTermUpdate(event.target.value)}}
           />
+          <div className="header__icon">
           <Link to= '/result' >
             <SearchIcon className='header__searchIcon' />
-          </Link>  
+          </Link> 
+
+          </div>
+           
         </form>
       </div>   
+
       <div className='header__nav'>
+        <div className='header__bas'>
         <Link to='/checkout' className='header__link'>
           <div className='header__optionBasket'>
             <ShoppingCartIcon />
               <span className='header__optionSecond header__basketCount'>{props.basket?.length}</span>
           </div>
         </Link>
+
+        </div>
         <Link to='/editProfile' className='header__link'>
           <div className='header__option'>
               <span className='header__optionFirst'>Welcome</span>
               <span className='header__optionSecond'>{user.first_name}</span> 
           </div>
         </Link> 
+          
+
+     
+       
+       
           <div className='header__option'>
             <Link to="/login">
               <button className="nav__Button mr-20" onClick={logOut} >Logout</button>

@@ -28,8 +28,8 @@ function CourseDetails(props) {
           <small>$</small>
           <strong>{props.price}</strong>
         </div>
-        <div className="course__content">
-          <p>{props.content}</p>
+        <div className="course__content" dangerouslySetInnerHTML={{__html:props.content}}>
+          {/* <p>{props.content}</p> */}
         </div> 
       </div>
     </div> 

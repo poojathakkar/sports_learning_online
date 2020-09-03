@@ -31,7 +31,8 @@
   margin-top: 10px;
 }
 .FormField__Input::placeholder {
-  color: #616E7F;
+  color: black;
+  opacity: 1;
 }
 .FormField__Button {
   background-color: #52C4B9;

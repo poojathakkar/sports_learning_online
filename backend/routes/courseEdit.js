@@ -13,7 +13,6 @@ module.exports = db => {
       values: [course_id]
     };
 
-    console.log(query);
     db.query(query)
       .then(result => {
         res.json(result)

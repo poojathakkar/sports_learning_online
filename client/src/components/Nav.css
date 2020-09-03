@@ -1,6 +1,7 @@
 .nav {
   background-color: #66DAC7;
-  height: var(--navbar-height);
+  /* height: var(--navbar-height); */
+  height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

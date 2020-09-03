@@ -19,6 +19,7 @@ import AuthorCourseLists from './pages/AuthorCourseLists';
 import EditCourse from './components/EditCourse';
 import Report from './components/Report';
 import Footer from './components/Footer';
+import Editor from './pages/Editor';
 
 function App() {
 
@@ -66,7 +67,7 @@ function App() {
 
               <Route path='/editProfile' render={({history}) =>
                 <>
-                  <Header user={user} setUser={setUser} onSearchTermUpdate={setSearchTerm}/>
+                  <Header user={user} setUser={setUser} onSearchTermUpdate={setSearchTerm} basket={basket} />
                   <Profile user={user} setUser={setUser} history={history} />
                 </>                         
               }/>
@@ -95,7 +96,7 @@ function App() {
               </Route>
 
               <Route path='/courses'>
-                <Header onSearchTermUpdate={setSearchTerm} user={user} setUser={setUser} />
+                <Header onSearchTermUpdate={setSearchTerm} user={user} setUser={setUser} basket={basket} />
                 <CoursesList course={course} setCourse={setCourse} user={user} />
               </Route>
 
@@ -118,6 +119,10 @@ function App() {
               <Route path='/revenueReport'>
                 <AuthorHeader />
                 <Report />
+              </Route>
+
+              <Route path='/content'>
+              <Editor />
               </Route>
             </Switch>
           </div>

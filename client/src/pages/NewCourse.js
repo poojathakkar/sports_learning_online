@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import './NewCourse.css';
 import axios from 'axios';
+import ReactQuill from 'react-quill';
+
 
 function NewCourse(props) {
 
   const [course, setCourse] = useState('');
+  const [value, setValue] = useState('');
+
   const handleChange = (name, e) => {
     const target = e.target;
     let value = target.value;
@@ -14,9 +18,21 @@ function NewCourse(props) {
       [name]: value
     });
   }
+
+  const toolbar = { toolbar: 
+   [
+    [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+    [{size: []}],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [{'list': 'ordered'}, {'list': 'bullet'}, 
+     {'indent': '-1'}, {'indent': '+1'}],
+    ['link', 'image', 'video'],
+    ['clean']
+  ]
+};
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/api/addCourse', {title: course.title, description: course.description, price: course.price, thumbnail: course.thumbnail, content: course.content, tags: course.tags })
+    axios.post('/api/addCourse', {title: course.title, description: course.description, price: course.price, thumbnail: course.thumbnail, content: value, tags: course.tags })
         .then(res => {
           props.history.push('/authorhomepage')
         })
@@ -50,7 +66,14 @@ function NewCourse(props) {
         <div className="newcourse__formfield">
           <label className="newcourse__label" htmlFor="course_description">*Content 
           </label>
-          <input type="text" id="course__input" placeholder="Content for course"  className="course__input--content" name='course_content' value={course.content} onChange={(e) => handleChange('content', e)} required />
+          <ReactQuill 
+            theme="snow"
+            onChange={setValue}
+            value={value}
+            modules={toolbar}
+            placeholder="Content for the course"
+          />
+          {/* <input type="text" id="course__input" placeholder="Content for course"  className="course__input--content" name='course_content' value={course.content} onChange={(e) => handleChange('content', e)} required /> */}
         </div>
         <div className="newcourse__formfield">
           <label className="newcourse__label" htmlFor="course_description">*Tags
