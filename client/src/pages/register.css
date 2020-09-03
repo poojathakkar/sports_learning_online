@@ -9,14 +9,15 @@
 .FormField__Label {
   display: block;
   text-transform: uppercase;
-  font-size: .9em;
-  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  color: #646F7D;
 }
 .FormField__Input {
   width: 85%;
   background-color: transparent;
   border: none;
-  color: white;
+  color: #445366;
   outline: none;
   border-bottom: 1px solid #445366;
   font-size: 1em;

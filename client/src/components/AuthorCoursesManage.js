@@ -30,8 +30,9 @@ function AuthorCoursesManage(props) {
           <small>$</small>
           <strong>{props.price}</strong>
         </div> 
-        <div className="coursemanage__right--content">
-          <p>{props.content}</p>
+        <div className="coursemanage__right--content" dangerouslySetInnerHTML={{__html:props.content}}>
+          
+          {/* <p>{props.content}</p> */}
         </div> 
         <div className="coursemanage__button">
           <Link to ={{
