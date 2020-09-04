@@ -12,9 +12,7 @@ function CheckoutProduct(props) {
           <small>$</small>
           <strong>{props.price}</strong>
         </p>
-        {/* <button onClick={props.onClick}>Remove from cart</button> */}
         <button className="checkout__Button mr-20" onClick={props.onClick} >Remove from cart</button>
-
       </div>
     </div>
   )

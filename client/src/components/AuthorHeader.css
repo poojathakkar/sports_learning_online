@@ -7,12 +7,14 @@
   z-index: 100;
   justify-content: space-between;
 }
+
 .authorheader__logo {
   width: 200px;
   margin-top: 18px;
   margin-left: 20px;
   margin-right: 20px;
 }
+
 .authorheader__navOne {
   display: flex;
   justify-content: space-evenly;
@@ -31,19 +33,23 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .authorheader__optionLine {
   font-size: 13px;
   font-weight: 800;
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .authorheader__optionFirst {
   font-size: 10px;
 }
+
 .authorheader__optionSecond {
   font-size: 13px;
   font-weight: 800;
 }
+
 .authorheader__link {
   color: #444;
   text-decoration: none;

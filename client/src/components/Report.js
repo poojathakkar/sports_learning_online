@@ -25,25 +25,23 @@ function Report() {
   };
   const [data, setData] = useState([]);
 
-    useEffect(() => {
-      axios.get('/api/revenue')
-      .then(res => {
-        console.log("Res",res);
-        setData(res.data)
-        console.log("Data",data);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-    }, [])
+  useEffect(() => {
+    axios.get('/api/revenue')
+    .then(res => {
+      setData(res.data)
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }, [])
 
-    const barGroups = data.map((d, i) => 
-      <g transform={`translate(0, ${i * barHeight})`}>                                           
-        <BarGroup d={d} barHeight={barHeight} />
-      </g>)                         
+  const barGroups = data.map((d, i) => 
+    <g transform={`translate(0, ${i * barHeight})`}>                                           
+      <BarGroup d={d} barHeight={barHeight} />
+    </g>)                         
     
-    return <div className="main" >
-      <svg width="800" height="400" style={styles}>
+  return <div className="main" >
+    <svg width="800" height="400" style={styles}>
       <g className="container">
         <text className="title" x="100" y="30">Monthly Revenue Report</text>
         <g className="chart" transform="translate(100,60)">
@@ -51,9 +49,7 @@ function Report() {
         </g>
       </g>
     </svg>
-
-    </div>
-    
-  }
+  </div>  
+}
 
 export default Report;

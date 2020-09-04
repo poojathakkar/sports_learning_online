@@ -12,8 +12,9 @@
   z-index: 1;
   border-radius: 20px;
   background-color:gainsboro;
-  box-shadow: 5px 10px #888888;
+  box-shadow: 2px 4px 10px #AAA;
 }
+
 .course__left {
   width: 50%;
   box-sizing: border-box;
@@ -27,6 +28,7 @@
   margin-top: 15px;
   margin-left: 15px;
 }
+
 .course__right {
   width: 70%;
   padding: 10px 30px;
@@ -37,6 +39,7 @@
   font-weight: 800;
   margin-bottom: 4px;
 }
+
 .course__right--rating {
   cursor: pointer;
   margin-bottom: 10px;

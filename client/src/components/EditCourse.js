@@ -84,15 +84,12 @@ function EditCourse(props) {
           <label className="updatecourse__label" htmlFor="updatecourse_content">*Content 
           </label>
           <div className="editorContent" style={styles}>
-
           <ReactQuill 
             theme="snow"
             onChange={setValue}
-            // value={course.content}
             modules={toolbar}
           />
           </div>
-           {/* <input type="text" id="updatecourse__input" placeholder="Content for course"  className="updatecourse__input--content" name='updatecourse_content' value={course.content} onChange={(e) => handleChange('content', e)} required />  */}
         </div>
         <div className="updatecourse__formfield">
           <label className="updatecourse__label" htmlFor="updatecourse_description">*Tags 

@@ -13,6 +13,7 @@
   background-color:gainsboro;
   box-shadow: 5px 10px #888888;
 }
+
 .coursemanage__left {
   width: 60%;
   box-sizing: border-box;
@@ -26,6 +27,7 @@
   margin-top: 5px;
   margin-left: 5px;
 }
+
 .coursemanage__right {
   width: 70%;
   padding: 10px 30px;
@@ -45,6 +47,7 @@
 input[type="radio"] {
   display: none;
 }
+
 .coursemanage__right--star {
   transition: color 200ms;
 }

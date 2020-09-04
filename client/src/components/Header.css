@@ -62,21 +62,25 @@
   padding-right: 20px;
   padding-left: 10px;
 }
+
 .search__form {
   display: flex;
   width: 100%;
   flex: 1 1 100%;
   height: 32px;
 }
+
 .radius {
   width: 100%;
 }
+
 .header__searchInput {
   height: 12px;
   padding: 10px;
   border: none;
   width: 100%;
 }
+
 .header__searchIcon {
   padding: 5px;
   height: 22px !important;
@@ -92,6 +96,7 @@
   height: 36px;
   align-items: center;
 }
+
 .header__optionBasket{
   color: #707b8b;
   display: flex;

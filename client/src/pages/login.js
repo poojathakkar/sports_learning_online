@@ -20,53 +20,43 @@ const Login = () => {
     //this stops the refresh
     e.preventDefault();
 
-
     axios
     .post('/api/login', { email, password })
     .then(res => {
-     // console.log("1", res.data);
-     auth.setUser(res.data);
-    // console.log("auth.setuser", auth.user);
-     const state = { msg: 'Welcome!' };
-
+      auth.setUser(res.data);
+      const state = { msg: 'Welcome!' };
       if(res.data.role === 'student') {
         history.replace('/studenthomepage', state)
-        // history.push('/studenthomepage')
       } else {
         history.replace('/authorhomepage', state)
       }
-    
     })
     .catch(error => {
       console.log(error);
       setDanger(true);
-
     })
   }
-
-    return (
-
-      <div className="FormCenter">
-        {danger &&
+  return (
+    <div className="FormCenter">
+      {danger &&
         <Alert color="danger">
           Your username or password is not correct!
         </Alert>
       }
-        <form onSubmit={handleSubmit} className="FormFields">
-          <div className="FormField">
-            {/* <h1><b>Login </b></h1> */}
-            <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
-            <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
-          </div>
-          <div className="FormField">
-            <label className="FormField__Label" htmlFor="password">Password</label>
-            <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
-          </div>
-          <div className="FormField">
-            <button className="FormField__Button mr-20">Login</button><Link to="/register" className="FormField__Link">Create an account</Link>
-          </div>
-        </form>
-      </div>
-    );
+      <form onSubmit={handleSubmit} className="FormFields">
+        <div className="FormField">
+          <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
+          <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+        </div>
+        <div className="FormField">
+          <label className="FormField__Label" htmlFor="password">Password</label>
+          <input type="password" id="password" className="FormField__Input" placeholder="Enter your password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+        </div>
+        <div className="FormField">
+          <button className="FormField__Button mr-20">Login</button><Link to="/register" className="FormField__Link">Create an account</Link>
+        </div>
+      </form>
+    </div>
+  );
 }
 export default Login;

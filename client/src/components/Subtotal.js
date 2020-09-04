@@ -3,7 +3,6 @@ import './Subtotal.css';
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from '../pages/reducer';
 
-
 function Subtotal(props) {
 
   return (
@@ -20,9 +19,7 @@ function Subtotal(props) {
         thousandSeparator={true}
         prefix={"$"}
       />
-      {/* <button>Proceed to checkout</button> */}
       <button className="subtotal__Button mr-20" >Proceed to checkout</button>
-
     </div>
   )
 }
