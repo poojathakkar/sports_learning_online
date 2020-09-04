@@ -17,7 +17,7 @@ function AuthorCourseLists(props) {
   }, []);
 
   return (
-    <div className="authorcourse">
+    <div className="authorcourselist">
       {course.map(c => <AuthorCoursesManage setCourse={setCourse} key={c.id} course_id={c.id} {...c} courseObj={c} history={props.history} />
       )}
     </div>

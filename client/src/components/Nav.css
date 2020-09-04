@@ -1,11 +1,9 @@
 .nav {
   background-color: #66DAC7;
-  /* height: var(--navbar-height); */
   height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* position: sticky; */
   top: 0;
   box-shadow: 0 2px 5px #00000010;
   z-index: 999999;
@@ -19,15 +17,15 @@
   margin: 25px;
 }
 
-
 .nav__button {
   margin-bottom: 40px;
   display: flex;
   flex-direction: row;
   padding: 30px;
 }
+
 .nav__Button {
-  background-color: #4C5D72;
+  background-color: #707b8b;
   color: white;
   border: none;
   outline: none;

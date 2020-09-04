@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
   padding: 20px;
-  max-height: 600px;
+  max-height: 1600px;
   min-width: 100px;
   margin: 10px;
   width: 100%;
-  background-color: white;
   z-index: 1;
+  border-radius: 20px;
+  background-color:gainsboro;
+  box-shadow: 5px 10px #888888;
 }
 
 .authorcourse__info {

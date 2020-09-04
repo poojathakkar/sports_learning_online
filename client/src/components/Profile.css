@@ -1,8 +1,6 @@
 .profile {
   display: flex;
-  /* margin-left: 20px; */
   margin-top: 100px;
-  /* align-items: center; */
   justify-content: center;
 }
 .FormCenter {
@@ -30,7 +28,7 @@
   margin-top: 10px;
 }
 .FormField__Input::placeholder {
-  color: #616E7F;
+  color: #ffff;
 }
 .FormField__Button {
   background-color: #52C4B9;

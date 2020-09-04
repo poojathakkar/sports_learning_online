@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './EditCourse.css';
 import ReactQuill from 'react-quill';
-import AuthorCoursesManage from './AuthorCoursesManage';
-
 
 function EditCourse(props) {
+
   const course_id = props.history.location.state.course;
   const [course, setCourse] = useState({});
   const [value, setValue] = useState('');
 
+  const styles = {
+    background: "#f3f1f2"
+  };
 
   const toolbar = { toolbar: 
     [
@@ -81,12 +83,15 @@ function EditCourse(props) {
         <div className="updatecourse__formfield" >
           <label className="updatecourse__label" htmlFor="updatecourse_content">*Content 
           </label>
+          <div className="editorContent" style={styles}>
+
           <ReactQuill 
             theme="snow"
             onChange={setValue}
             // value={course.content}
             modules={toolbar}
           />
+          </div>
            {/* <input type="text" id="updatecourse__input" placeholder="Content for course"  className="updatecourse__input--content" name='updatecourse_content' value={course.content} onChange={(e) => handleChange('content', e)} required />  */}
         </div>
         <div className="updatecourse__formfield">

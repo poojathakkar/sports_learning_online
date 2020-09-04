@@ -1,8 +1,7 @@
 .checkoutProduct {
   display: flex;
-  /* padding-left: 20px; */
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   border-radius: 20px;
   background-color: gainsboro;
   box-shadow: 5px 10px #888888;
@@ -26,11 +25,11 @@
 
 }
 
-.checkoutProduct__info > button {
+/* .checkoutProduct__info > button {
   background: #4C5D72;
   border: 1px solid;
   margin-top:10px;
-}
+} */
 .checkout__Button {
   background-color: #4C5D72;
   color: white;
