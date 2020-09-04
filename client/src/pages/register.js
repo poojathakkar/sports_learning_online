@@ -29,20 +29,15 @@ const Register = () => {
     });
   }, [alert]);
 
-
   const handleChange = (name) => (e) => {
     const target = e.target;
     let value = ''
 
     if (name === 'role') {
       value = target.checked ? 'author' : 'student';
-     // console.log('value1', value);
     } else {
       value = target.value
-     // console.log('value2', value);
     }
-
-
     setState({
       ...state,
       [name]: value
@@ -52,29 +47,20 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    //console.log('The form was submitted with the following data:');
-   // console.log(`state: ${JSON.stringify(state)}`);
-    
-
     axios.post(`/api/register`, {first_name: state.first_name, last_name: state.last_name, email: state.email, password: state.password, role: state.role})
       .then(res => {
-     //   console.log("res:", res.data);
         auth.setUser(res.data)
         const state = { msg: 'Registeration is successful!' };
-
         if (res.data.role === 'author') {
           history.replace('/authorhomepage', state)
         } else {
           history.replace('/studenthomepage', state)
         }
-
       })
       .catch((err) => {
         console.log(`err: ${err}`)
         setAlert('User already exists!');
-
       })
-  
   }
 
   return (
@@ -87,7 +73,6 @@ const Register = () => {
 
       <form onSubmit={handleSubmit} className='FormFields'>
         <div className='FormField'>
-          {/* <h1><b>Please fill in this form to create an account</b></h1> */}
           <label className='FormField__Label' htmlFor='first_name'>First Name</label>
           <input type='text' id='first_name' className='FormField__Input' placeholder='Enter your first name' name='first_name' value={state.first_name} onChange={handleChange('first_name')} required/>
         </div>
@@ -114,6 +99,5 @@ const Register = () => {
       </form>
     </div>
   );
-
 }
 export default Register

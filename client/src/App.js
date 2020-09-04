@@ -4,7 +4,6 @@ import useApplicationData from './hooks/useApplicationData';
 import Login from './pages/login';
 import Register from './pages/register';
 import Header from './components/Header'
-import './App.css';
 import Nav from './components/Nav';
 import Studenthomepage from './pages/studenthomepage';
 import Authorhomepage from './pages/authorhomepage';
@@ -19,14 +18,12 @@ import AuthorCourseLists from './pages/AuthorCourseLists';
 import EditCourse from './components/EditCourse';
 import Report from './components/Report';
 import Footer from './components/Footer';
-import Editor from './pages/Editor';
 
 function App() {
 
   const {user, setUser} = useContext(AuthContext);
   const {course, setCourse, basket, setBasket} = useApplicationData(user);
   const [searchTerm, setSearchTerm] = useState("");
-
 
   return (
     <>
@@ -119,10 +116,6 @@ function App() {
               <Route path='/revenueReport'>
                 <AuthorHeader />
                 <Report />
-              </Route>
-
-              <Route path='/content'>
-              <Editor />
               </Route>
             </Switch>
           </div>

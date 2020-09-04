@@ -3,7 +3,6 @@ import './authorhomepage.css';
 import axios from 'axios';
 import AuthorCourses from '../components/AuthorCourses';
 
-
 function Authorhomepage() {
   const [course, setCourse] = useState([]);
   useEffect(() => {
