@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import useApplicationData from './hooks/useApplicationData';
 import Login from './pages/login';
@@ -25,11 +25,17 @@ function App() {
   const {course, setCourse, basket, setBasket} = useApplicationData(user);
   const [searchTerm, setSearchTerm] = useState("");
 
+  useEffect(() => {
+   setSearchTerm(searchTerm)
+  },[searchTerm])
+
   return (
     <>
       <Router>
         <>
-          {!user && ( <Nav /> )}
+          {!user && 
+            <Redirect to='/register' />
+           }
           <div className='app'>
             <Switch>
               <Route path='/' exact>
@@ -39,7 +45,8 @@ function App() {
                 )}
                 {user && user.role === 'author' && (
                   <Redirect to='/authorhomepage' />
-                )}               
+                )}
+                            
               </Route>
 
               <Route path='/register'>
@@ -57,8 +64,8 @@ function App() {
 
               <Route path='/result' render={({history}) =>
                 <>
-                  <Header user={user} setUser={setUser} course={course} setCourse={setCourse} onSearchTermUpdate={setSearchTerm} basket={basket} setBasket={setBasket} />
-                  <Result course={course} setCourse={setCourse} history={history} searchTerm={searchTerm} basket={basket} setBasket={setBasket} />
+                  <Header user={user} setUser={setUser} course={course} setCourse={setCourse} onSearchTermUpdate={setSearchTerm} searchTerm={searchTerm} basket={basket} setBasket={setBasket} />
+                  <Result course={course} setCourse={setCourse} history={history} searchTerm={searchTerm} basket={basket} setBasket={setBasket} onSearchTermUpdate={setSearchTerm} />
                 </>
               }/>
 

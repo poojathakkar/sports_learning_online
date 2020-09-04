@@ -4,6 +4,7 @@ import axios from 'axios';
 import './register.css';
 import { AuthContext } from '../components/AuthProvider';
 import { Alert } from 'reactstrap';
+import Nav from '../components/Nav';
 
 const Register = () => {
 
@@ -64,40 +65,43 @@ const Register = () => {
   }
 
   return (
-    <div className='FormCenter'>
-      {alert &&
-        <Alert color="danger">
-          {alert}
-        </Alert>
-      }
-
-      <form onSubmit={handleSubmit} className='FormFields'>
-        <div className='FormField'>
-          <label className='FormField__Label' htmlFor='first_name'>First Name</label>
-          <input type='text' id='first_name' className='FormField__Input' placeholder='Enter your first name' name='first_name' value={state.first_name} onChange={handleChange('first_name')} required/>
-        </div>
-        <div className='FormField'>
-          <label className='FormField__Label' htmlFor='last_name'>Last Name</label>
-          <input type='text' id='last_name' className='FormField__Input' placeholder='Enter your last name' name='last_name' value={state.last_name} onChange={handleChange('last_name')} required/>
-        </div>
-        <div className='FormField'>
-          <label className='FormField__Label' htmlFor='email'>E-Mail Address</label>
-          <input type='email' id='email' className='FormField__Input' placeholder='Enter your email' name='email' value={state.email} onChange={handleChange('email')} required/>
-        </div>
-        <div className='FormField'>
-          <label className='FormField__Label' htmlFor='password'>Password</label>
-          <input type='password' id='password' className='FormField__Input' placeholder='Enter your password' name='password' value={state.password} onChange={handleChange('password')} required/>
-        </div>
-        <div className='FormField'>
-          <label className='FormField__CheckboxLabel'>
-            <input className='FormField__Checkbox' type='checkbox' name='role' value={state.role} onChange={handleChange('role')} /> I am an <b>Author</b>
-          </label>
-        </div>
-        <div className='FormField'>
-          <button className='FormField__Button mr-20'>Register</button> <Link to='/login' className='FormField__Link'>I'm already member</Link>
-        </div>
-      </form>
-    </div>
+  
+    <>
+      <Nav />
+      <div className='FormCenter'>
+        <form onSubmit={handleSubmit} className='FormFields'>
+          {alert &&
+            <Alert color="danger">
+              {alert}
+            </Alert>
+          }
+          <div className='FormField'>
+            <label className='FormField__Label' htmlFor='first_name'>First Name</label>
+            <input type='text' id='first_name' className='FormField__Input' placeholder='Enter your first name' name='first_name' value={state.first_name} onChange={handleChange('first_name')} required/>
+          </div>
+          <div className='FormField'>
+            <label className='FormField__Label' htmlFor='last_name'>Last Name</label>
+            <input type='text' id='last_name' className='FormField__Input' placeholder='Enter your last name' name='last_name' value={state.last_name} onChange={handleChange('last_name')} required/>
+          </div>
+          <div className='FormField'>
+            <label className='FormField__Label' htmlFor='email'>E-Mail Address</label>
+            <input type='email' id='email' className='FormField__Input' placeholder='Enter your email' name='email' value={state.email} onChange={handleChange('email')} required/>
+          </div>
+          <div className='FormField'>
+            <label className='FormField__Label' htmlFor='password'>Password</label>
+            <input type='password' id='password' className='FormField__Input' placeholder='Enter your password' name='password' value={state.password} onChange={handleChange('password')} required/>
+          </div>
+          <div className='FormField'>
+            <label className='FormField__CheckboxLabel'>
+              <input className='FormField__Checkbox' type='checkbox' name='role' value={state.role} onChange={handleChange('role')} /> I am an <b>Author</b>
+            </label>
+          </div>
+          <div className='FormField'>
+            <button className='FormField__Button mr-20'>Register</button> <Link to='/login' className='FormField__Link'>I'm already member</Link>
+          </div>
+        </form>
+      </div>
+    </>
   );
 }
 export default Register

@@ -6,12 +6,14 @@ function Result(props) {
 
 const [courses, setCourses] = useState([]);
 
+console.log("props", props);
+
   useEffect(() => {
   axios.get(`/api/searchCourse/${props.searchTerm}`)
     .then(response => {
       setCourses(response.data);
-      //props.setSearchTerm(null);
-      console.log(response.data);
+      //setSearchTerm("");
+      console.log("res_data",response.data);
     })
     .catch(err => console.log(err.mesage));
   },[]);

@@ -3,20 +3,17 @@
   margin-top: 100px;
   justify-content: center;
 }
-
 .updatecourse__formfield {
   margin-bottom: 40px;
 }
-
 .updatecourse__label {
   display: block;
   text-transform: uppercase;
   font-size: .9em;
   color: white;
 }
-
 .updatecourse__input {
-  width: 85%;
+  width: 100%;
   background-color: transparent;
   border: none;
   color: white;
@@ -47,4 +44,7 @@
   padding: 15px 70px;
   font-size: .8em;
   font-weight: 500;
+}
+.editorContent {
+  margin-top: 10px;
 }

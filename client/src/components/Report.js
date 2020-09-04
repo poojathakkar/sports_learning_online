@@ -36,7 +36,7 @@ function Report() {
   }, [])
 
   const barGroups = data.map((d, i) => 
-    <g transform={`translate(0, ${i * barHeight})`}>                                           
+    <g key={i} transform={`translate(0, ${i * barHeight})`}>                                           
       <BarGroup d={d} barHeight={barHeight} />
     </g>)                         
     

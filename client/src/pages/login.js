@@ -4,14 +4,12 @@ import axios from 'axios';
 import './login.css';
 import { AuthContext } from '../components/AuthProvider';
 import { Alert } from 'reactstrap';
-
-
+import Nav from '../components/Nav';
 
 const Login = () => {
 
   const [email, setEmail] = useState("");
   const [danger, setDanger] = useState(false);
-
   const [password, setPassword] = useState("");
   const history = useHistory();
   const auth = useContext(AuthContext);
@@ -37,13 +35,16 @@ const Login = () => {
     })
   }
   return (
+
+    <>
+    <Nav />
     <div className="FormCenter">
-      {danger &&
-        <Alert color="danger">
-          Your username or password is not correct!
-        </Alert>
-      }
       <form onSubmit={handleSubmit} className="FormFields">
+        {danger &&
+          <Alert color="danger" >
+            Your username or password is not correct!
+          </Alert>
+        }
         <div className="FormField">
           <label className="FormField__Label" htmlFor="email">E-Mail Address</label>
           <input type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
@@ -57,6 +58,7 @@ const Login = () => {
         </div>
       </form>
     </div>
+    </>
   );
 }
 export default Login;

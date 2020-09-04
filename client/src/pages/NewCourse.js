@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './NewCourse.css';
 import axios from 'axios';
 import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 function NewCourse(props) {
   const styles = {
     background: "#f3f1f2"

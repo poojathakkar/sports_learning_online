@@ -12,8 +12,8 @@ function Header(props) {
 
   function logOut() {
     setUser(null);
-  }  
-  
+  }
+
   return (
     <nav className='header'>
       <Link to='/studenthomepage'>
@@ -40,6 +40,7 @@ function Header(props) {
             type="text"
             value={value}
             onChange={event => {setValue(event.target.value);props.onSearchTermUpdate(event.target.value)}}
+            onBlur={event => {setValue("")}}
           />
           <div className="header__icon">
             <Link to= '/result' >
