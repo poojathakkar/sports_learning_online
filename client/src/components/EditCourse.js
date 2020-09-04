@@ -88,6 +88,7 @@ function EditCourse(props) {
             theme="snow"
             onChange={setValue}
             modules={toolbar}
+            // value={course.content}
           />
           </div>
         </div>
