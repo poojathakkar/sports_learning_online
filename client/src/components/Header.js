@@ -70,14 +70,9 @@ function Header(props) {
               <span className='header__optionSecond'>{user.first_name}</span> 
           </div>
         </Link> 
-          
-
-     
-       
-       
           <div className='header__option'>
             <Link to="/login">
-              <button className="nav__Button mr-20" onClick={logOut} >Logout</button>
+              <button className="headernav__Button mr-20" onClick={logOut} >Logout</button>
             </Link>    
           </div>
       </div>

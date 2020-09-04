@@ -1,5 +1,5 @@
 .authorheader {
-  background-color: #4C5D72;
+  background-color: white;
   height: 70px;
   display: flex;
   /* align-items: center; */
@@ -50,28 +50,12 @@ justify-content: space-between;
   font-weight: 800;
 }
 .authorheader__link {
-  color: #66DAC7;
+  color: #444;
   text-decoration: none;
-  /* justify-content: space-evenly; */
-}
-/* .authorheader__search {
-  display: flex;
-  flex: 1;
 }
 
-.authorheader__searchInput {
-  height: 12px;
-  padding: 10px;
-  border: none;
-  width: 100%;
-}
-.authorheader__searchIcon {
-  padding: 5px;
-  height: 22px !important;
-  background-color: #66DAC7
-} */
 .authornav__Button {
-  background-color: #66DAC7;
+  background-color: #707b8b;
   color: white;
   border: none;
   outline: none;

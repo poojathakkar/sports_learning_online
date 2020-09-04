@@ -1,6 +1,5 @@
 .checkoutProduct {
   display: flex;
-  /* padding-left: 20px; */
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 20px;
@@ -32,7 +31,7 @@
   margin-top:10px;
 }
 .checkout__Button {
-  background-color: #4C5D72;
+  background-color:707b8b;
   color: white;
   border: none;
   outline: none;

@@ -2,22 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-between; */
   width: 300px;
   height: 100px;
   padding:20px;
-  /* background-color: #4C5D72; */
-  /* border: 1px solid white; */
-  /* border-radius: 3px; */
   border-radius: 20px;
   background-color: gainsboro;
   box-shadow: 5px 10px #888888;
-
 }
-
-
 .subtotal__Button {
-  background-color: #4C5D72;
+  background-color: #707b8b;
   color: white;
   border: none;
   outline: none;
