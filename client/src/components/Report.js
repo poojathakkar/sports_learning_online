@@ -38,7 +38,8 @@ function Report() {
         <BarGroup d={d} barHeight={barHeight} />
       </g>)                         
     
-    return <svg width="800" height="400" >
+    return <div className="main">
+      <svg width="800" height="400" >
       <g className="container">
         <text className="title" x="100" y="30">Monthly Revenue Report</text>
         <g className="chart" transform="translate(100,60)">
@@ -46,6 +47,9 @@ function Report() {
         </g>
       </g>
     </svg>
+
+    </div>
+    
   }
 
 export default Report;

@@ -15,13 +15,13 @@
   color: white;
 }
 
-.course__input {
+.newcourse__input {
   width: 100%;
   background-color: transparent;
   border: none;
   color: white;
   outline: none;
-  border-bottom: 1px solid #445366;
+  border-bottom: 1px solid lightslategray;
   font-size: 1em;
   font-weight: 300;
   padding-bottom: 10px;
@@ -29,13 +29,14 @@
 }
 
 .coursetitle__input::placeholder {
-  color: #616E7F;
+  color: lightgray;
+  opacity: 0.6;
 }
 
-.course__input--content {
+.newcourse__input--content {
   margin-top: 10px;
-  height: 100px;
-  width: 500px;
+  height: 40px;
+  width: 800px;
 }
 .newcourse__button {
   background-color: #52C4B9;
@@ -46,4 +47,8 @@
   padding: 15px 70px;
   font-size: .8em;
   font-weight: 500;
+}
+
+.editor {
+  margin-top: 10px;
 }
