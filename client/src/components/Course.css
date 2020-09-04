@@ -12,7 +12,8 @@
   flex: 1 1 25%;
   border-radius: 20px;
   background-color: gainsboro;
-  box-shadow: 5px 10px #888888;
+  /* box-shadow: 5px 10px #888888; */
+  box-shadow: 2px 4px 10px #AAA;
 }
 
 .course__info{

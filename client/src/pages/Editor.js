@@ -8,8 +8,7 @@ import 'react-quill/dist/quill.snow.css';
 function Editor() {
   const styles = {
     background: "#f3f1f2"
-  
-};
+  };
   const [value, setValue] = useState('');
 
   
