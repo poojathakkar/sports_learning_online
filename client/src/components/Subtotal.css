@@ -8,10 +8,8 @@
   margin-top: 10px;
   border-radius: 20px;
   background-color: gainsboro;
-  box-shadow: 5px 10px #888888;
+  box-shadow: 2px 4px 10px #AAA
 }
-
-
 .subtotal__Button {
   background-color: #707b8b;
   color: white;
