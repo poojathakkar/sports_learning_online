@@ -1,14 +1,8 @@
 .FormCenter {
-  /* margin-top:20px; */
-  /* margin-bottom: 100px; */
-  /* margin-left: 20px; */
-  /* width: 300px; */
   margin-top: 70px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
-
 .FormField {
   margin-bottom: 40px;
 }
@@ -32,7 +26,7 @@
   opacity: 0.5
 }
 .FormField__Input::placeholder {
-  color: black;
+  color: white;
   opacity: 1;
 }
 .FormField__Button {

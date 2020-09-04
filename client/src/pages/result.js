@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './result.css';
 import axios from 'axios';
 import Course from '../components/Course';
 
@@ -11,6 +10,7 @@ const [courses, setCourses] = useState([]);
   axios.get(`/api/searchCourse/${props.searchTerm}`)
     .then(response => {
       setCourses(response.data);
+      //props.setSearchTerm(null);
       console.log(response.data);
     })
     .catch(err => console.log(err.mesage));

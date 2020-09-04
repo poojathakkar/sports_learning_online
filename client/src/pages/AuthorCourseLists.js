@@ -10,8 +10,6 @@ function AuthorCourseLists(props) {
     axios.get('/api/authorCourse')
         .then(res => {
           setCourse(res.data);
-         // console.log("Check", res.data)
-
         })
         .catch(err => console.log(err.message));
   }, []);
