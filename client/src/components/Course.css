@@ -12,7 +12,6 @@
   flex: 1 1 25%;
   border-radius: 20px;
   background-color: gainsboro;
-  /* box-shadow: 5px 10px #888888; */
   box-shadow: 2px 4px 10px #AAA;
 }
 
@@ -30,15 +29,10 @@
   width: 100%;
   object-fit: contain;
   margin-bottom: 15px;
- 
 }
-.course > button {
-  background-color: #4C5D72;
-  border: 1px solid;
 
-}
 .course__Button {
-  background-color: #4C5D72;
+  background-color: #707b8b;
   color: white;
   border: none;
   outline: none;

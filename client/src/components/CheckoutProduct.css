@@ -6,20 +6,23 @@
   background-color: gainsboro;
   box-shadow: 2px 4px 10px #AAA;
 }
+
 .checkoutProduct__image {
   object-fit: contain;
   width: 180px;
   height: 180px;
   padding-bottom: 15px;
 }
+
 .checkoutProduct__info {
   padding-left: 20px;
-
 }
+
 .checkoutProduct__title {
   font-size: 17px;
   font-weight: 800px;
 }
+
 .checkout__Button {
   background-color: #707b8b;
   color: white;
