@@ -68,13 +68,24 @@ function App() {
                   <Result course={course} setCourse={setCourse} history={history} searchTerm={searchTerm} basket={basket} setBasket={setBasket} onSearchTermUpdate={setSearchTerm} />
                 </>
               }/>
+              
+              {user && user.role === 'student' && (
+                <Route path='/editProfile' render={({history}) =>
+                  <>
+                    <Header user={user} setUser={setUser} onSearchTermUpdate={setSearchTerm} basket={basket} />
+                    <Profile user={user} setUser={setUser} history={history} />
+                  </>                         
+                }/>
+              )}
 
-              <Route path='/editProfile' render={({history}) =>
-                <>
-                  <Header user={user} setUser={setUser} onSearchTermUpdate={setSearchTerm} basket={basket} />
-                  <Profile user={user} setUser={setUser} history={history} />
-                </>                         
-              }/>
+              {user && user.role === 'author' && (
+                <Route path='/editProfile' render={({history}) =>
+                  <>
+                    <AuthorHeader user={user} setUser={setUser} />
+                    <Profile user={user} setUser={setUser} history={history} />
+                  </>                         
+                }/>
+              )}
 
               <Route path='/editCourse' render={({history}) =>
                 <>
