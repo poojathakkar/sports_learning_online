@@ -43,27 +43,27 @@ function NewCourse(props) {
     <div className="newcourse">
       <form onSubmit={handleSubmit} className="newcourse__form">
         <div className="newcourse__formfield">
-          <label className="newcourse__label" htmlFor="course_title">*Course Title 
+          <label className="FormField__Label" htmlFor="course_title">*Course Title 
           </label>
           <input type="text" id="newcourse__input" placeholder="Title for course"  className="newcourse__input" name='course_title' value={course.title} onChange={(e) => handleChange('title', e)} required />
         </div>
         <div className="newcourse__formfield">
-          <label className="newcourse__label" htmlFor="course_description">*Course Description 
+          <label className="FormField__Label" htmlFor="course_description">*Course Description 
           </label>
           <input type="text" id="newcourse__input" placeholder="Description for course"  className="newcourse__input" name='course_description' value={course.description} onChange={(e) => handleChange('description', e)} required />
         </div>
         <div className="newcourse__formfield">
-          <label className="newcourse__label" htmlFor="course_description">*Course Price 
+          <label className="FormField__Label" htmlFor="course_description">*Course Price 
           </label>
           <input type="text" id="newcourse__input" placeholder="Price for course"  className="newcourse__input" name='course_price' value={course.price} onChange={(e) => handleChange('price', e)} required />
         </div>
         <div className="newcourse__formfield">
-          <label className="newcourse__label" htmlFor="course_description">*Thumbnail 
+          <label className="FormField__Label" htmlFor="course_description">*Thumbnail 
           </label>
           <input type="text" id="newcourse__input" placeholder="Image for course"  className="newcourse__input" name='course_thumbnail' value={course.thumbnail} onChange={(e) => handleChange('thumbnail', e)} required />
         </div>
         <div className="newcourse__formfield">
-          <label className="newcourse__label" htmlFor="course_description">*Content 
+          <label className="FormField__Label" htmlFor="course_description">*Content 
           </label>
           <div className="editor" style={styles}>
             <ReactQuill 
@@ -76,7 +76,7 @@ function NewCourse(props) {
           </div>
         </div>
         <div className="newcourse__formfield">
-          <label className="newcourse__label" htmlFor="course_description">*Tags
+          <label className="FormField__Label" htmlFor="course_description">*Tags
           </label>
           <input type="text" id="newcourse__input" placeholder="Tags for course"  className="newcourse__input--content" name='course_tags' value={course.tags} onChange={(e) => handleChange('tags', e)} required />
         </div>

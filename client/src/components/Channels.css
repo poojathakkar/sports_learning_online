@@ -1,0 +1,45 @@
+.channels {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.channels__col {
+  margin-right : 15px;
+  margin-right: 15px;
+
+}
+
+.channels__comp {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  background-color: gainsboro;
+  box-shadow: 2px 4px 10px #AAA
+}
+
+.channels__comp > img {
+  height: 90px;
+  width: 90px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: .5rem !important;
+
+}
+
+.channels__body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.channels__text {
+  margin-top: 0;
+  margin-bottom: 1 rem;
+  text-align: center !important;
+}
