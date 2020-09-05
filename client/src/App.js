@@ -18,6 +18,7 @@ import AuthorCourseLists from './pages/AuthorCourseLists';
 import EditCourse from './components/EditCourse';
 import Report from './components/Report';
 import Footer from './components/Footer';
+import Channels from './components/Channels';
 
 function App() {
 
@@ -135,6 +136,23 @@ function App() {
                 <AuthorHeader />
                 <Report />
               </Route>
+            
+              {user && user.role === 'student' && (
+
+              <Route path='/channels'>
+                <Header basket={basket} />
+                <Channels />
+              </Route>
+              )}
+
+              {user && user.role === 'author' && (
+
+              <Route path='/channels'>
+                <AuthorHeader  />
+                <Channels />
+              </Route>
+              )}
+
             </Switch>
           </div>
         </>
