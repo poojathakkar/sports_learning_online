@@ -37,18 +37,18 @@
 }
 
 .header__optionLine {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .header__optionFirst {
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .header__optionSecond {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
 }
 
