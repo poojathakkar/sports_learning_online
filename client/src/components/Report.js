@@ -21,7 +21,7 @@ function Report() {
   const barHeight = 30;
   const styles = {
     display: "flex",
-    margin: "0 auto"
+    margin: "50 auto"
   };
   const [data, setData] = useState([]);
 
