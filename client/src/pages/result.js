@@ -6,14 +6,18 @@ function Result(props) {
 
 const [courses, setCourses] = useState([]);
 
+const styles = {
+  display: "flex",
+  margin: "50 auto",
+};
+
 console.log("props", props);
 
   useEffect(() => {
   axios.get(`/api/searchCourse/${props.searchTerm}`)
     .then(response => {
       setCourses(response.data);
-      //setSearchTerm("");
-      console.log("res_data",response.data);
+      console.log("courses",courses);
     })
     .catch(err => console.log(err.mesage));
   },[]);
@@ -31,8 +35,16 @@ console.log("props", props);
   }
 
   return (
-    <div className="course__search">
-       {courses.map(c => <Course key={c.id} {...c} onClick={() => addToBasket(c)} />)}
+    <div className="search">
+      {courses.length === 0 ? (
+        <div style={styles}>
+          <h2>Sorry! No result found.</h2>  
+        </div>
+      ) : (
+        <div className="course__search">
+          {courses.map(c => <Course key={c.id} {...c} onClick={() => addToBasket(c)} />)}
+        </div>
+      )}
     </div>
   )
 }
