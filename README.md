@@ -1,4 +1,22 @@
-# Final Project Boilerplate
+### Sports Learning Online
+
+In Sports organizations, there is a lack of problem solving and business skill set. Most of the time, Professional development is not prioritised within the industry. Another problem is the Siloed scenario, which is present in almost every level of industry. As a solution to provide basic skill sets to professionals, presenting our application, SLO (Sports Learning Online).SLO is a content aggregation platform that focuses on providing industry related content to its target markets.SLO hopes to open up the world of sports outside of the siloed sports organizations.
+
+For the frontend , we used React, Material UI and Quill JS and for the backend we used Express, Nodejs and PostgresSql. Currently SLO has two types of users. An author and a student. The author can create and manage  courses. And students can search for the available courses and can buy the courses accordingly.
+
+## SneakPeek of SLO
+
+!["Screenshot of Register"]()
+!["Screenshot of Author home page"]()
+!["Screenshot of Create Course page"]()
+!["Screenshot of Manage Course page"]()
+!["Screenshot of Edit Profile page"]()
+!["Screenshot of Revenue Report page"]()
+!["Screenshot of Student home page"]()
+!["Screenshot of Search bar"]()
+!["Screenshot of Add to cart"]()
+
+## Project Setup
 
 The project has 2 main folders:
 
