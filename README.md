@@ -6,15 +6,15 @@ For the frontend , we used React, Material UI and Quill JS and for the backend w
 
 ## SneakPeek of SLO
 
-!["Screenshot of Register"]()
-!["Screenshot of Author home page"]()
-!["Screenshot of Create Course page"]()
-!["Screenshot of Manage Course page"]()
-!["Screenshot of Edit Profile page"]()
-!["Screenshot of Revenue Report page"]()
-!["Screenshot of Student home page"]()
-!["Screenshot of Search bar"]()
-!["Screenshot of Add to cart"]()
+!["Screenshot of Register"](https://github.com/poojathakkar/sports_learning_online/blob/master/docs/Register.png?raw=true)
+!["Screenshot of Author home page"](https://github.com/poojathakkar/sports_learning_online/blob/master/docs/Authorhomepage.png?raw=true)
+!["Screenshot of Create Course page"](https://github.com/poojathakkar/sports_learning_online/blob/master/docs/CreateCourse.png?raw=true)
+!["Screenshot of Manage Course page"](https://github.com/poojathakkar/sports_learning_online/blob/master/docs/ManageCourse.png?raw=true)
+!["Screenshot of Edit Profile page"](https://github.com/poojathakkar/sports_learning_online/blob/master/docs/EditProfile.png?raw=true)
+!["Screenshot of Revenue Report page"](https://github.com/poojathakkar/sports_learning_online/blob/master/docs/RevenueReport.png?raw=true)
+!["Screenshot of Student home page"](https://github.com/poojathakkar/sports_learning_online/blob/master/docs/Studenthomepage.png?raw=true)
+!["Screenshot of Search bar"](https://github.com/poojathakkar/sports_learning_online/blob/master/docs/Search.png?raw=true)
+!["Screenshot of Add to cart"](https://github.com/poojathakkar/sports_learning_online/blob/master/docs/AddtoCart.png?raw=true)
 
 ## Project Setup
 
